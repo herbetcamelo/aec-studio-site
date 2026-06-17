@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AEC Studio | Engenharia & Legalização — Curadoria Técnica de Alto Padrão</title>
+  <meta name="description" content="AEC Studio — Engenharia de Alto Padrão, Legalização Imobiliária e Curadoria Técnica. Mais de 300 projetos entregues em Fortaleza/CE." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-white': '#F8FAFC',
+            'brand-offwhite': '#FAFAFA',
+            'brand-navy': '#0F172A',
+            'brand-navy-light': '#1E293B',
+            'brand-navy-mid': '#1E3A8A',
+            'brand-navy-deep': '#172554',
+            'brand-graphite': '#111827',
+            'brand-copper': '#B45309',
+            'brand-copper-dark': '#C2410C',
+          },
+          fontFamily: {
+            'heading': ['Montserrat', 'sans-serif'],
+            'body': ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #111827;
+      background-color: #F8FAFC;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Scroll reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger children */
+    .reveal-stagger .reveal-child {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-stagger.active .reveal-child {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-stagger.active .reveal-child:nth-child(1) { transition-delay: 0.05s; }
+    .reveal-stagger.active .reveal-child:nth-child(2) { transition-delay: 0.15s; }
+    .reveal-stagger.active .reveal-child:nth-child(3) { transition-delay: 0.25s; }
+    .reveal-stagger.active .reveal-child:nth-child(4) { transition-delay: 0.35s; }
+
+    /* Counter animation */
+    .counter-value {
+      display: inline-block;
+    }
+
+    /* Card hover effects */
+    .service-card {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
+    }
+    .service-card:hover .card-icon {
+      color: #B45309;
+      transform: scale(1.1);
+    }
+    .card-icon {
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Nav link hover */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #B45309;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Button shine effect */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left 0.5s ease;
+    }
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    /* WhatsApp floating button pulse */
+    .whatsapp-float {
+      animation: whatsapp-pulse 2s infinite;
+    }
+    @keyframes whatsapp-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      50% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+    }
+
+    /* Tab active state */
+    .tab-btn.active {
+      background-color: #0F172A;
+      color: #F8FAFC;
+      border-color: #0F172A;
+    }
+    .tab-btn {
+      transition: all 0.3s ease;
+    }
+
+    /* Hero gradient overlay */
+    .hero-gradient {
+      background: linear-gradient(135deg, rgba(15,23,42,0.92) 0%, rgba(30,58,138,0.85) 50%, rgba(23,37,84,0.80) 100%);
+    }
+
+    /* Hero architectural pattern */
+    .hero-pattern {
+      background-image:
+        linear-gradient(30deg, rgba(180,83,9,0.06) 12%, transparent 12.5%, transparent 87%, rgba(180,83,9,0.06) 87.5%, rgba(180,83,9,0.06)),
+        linear-gradient(150deg, rgba(180,83,9,0.06) 12%, transparent 12.5%, transparent 87%, rgba(180,83,9,0.06) 87.5%, rgba(180,83,9,0.06)),
+        linear-gradient(30deg, rgba(180,83,9,0.06) 12%, transparent 12.5%, transparent 87%, rgba(180,83,9,0.06) 87.5%, rgba(180,83,9,0.06)),
+        linear-gradient(150deg, rgba(180,83,9,0.06) 12%, transparent 12.5%, transparent 87%, rgba(180,83,9,0.06) 87.5%, rgba(180,83,9,0.06)),
+        linear-gradient(60deg, rgba(255,255,255,0.04) 25%, transparent 25.5%, transparent 75%, rgba(255,255,255,0.04) 75%, rgba(255,255,255,0.04)),
+        linear-gradient(60deg, rgba(255,255,255,0.04) 25%, transparent 25.5%, transparent 75%, rgba(255,255,255,0.04) 75%, rgba(255,255,255,0.04));
+      background-size: 80px 140px;
+      background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    }
+
+    /* Subtle grid for authority section */
+    .authority-grid-bg {
+      background-image: radial-gradient(circle at 1px 1px, rgba(180,83,9,0.08) 1px, transparent 0);
+      background-size: 40px 40px;
+    }
+
+    /* Smooth scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #F8FAFC; }
+    ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #0F172A; }
+
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    /* Form input focus */
+    .form-input:focus {
+      border-color: #1E3A8A;
+      box-shadow: 0 0 0 3px rgba(30,58,138,0.1);
+    }
+
+    /* Geometric accent lines */
+    .accent-line {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #B45309, #C2410C);
+    }
+
+    /* Logo hexagon */
+    .logo-hex {
+      clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- HEADER / NAV BAR                               -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-3 group">
+          <div class="relative w-11 h-11">
+            <svg viewBox="0 0 48 48" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <!-- Hexagon -->
+              <polygon points="24,2 44,14 44,34 24,46 4,34 4,14"
+                fill="none" stroke="#0F172A" stroke-width="2.2" class="transition-all duration-300 group-hover:stroke-[#1E3A8A]"/>
+              <!-- Compass circle -->
+              <circle cx="24" cy="24" r="10" fill="none" stroke="#1E3A8A" stroke-width="1.5"/>
+              <!-- Compass needle left -->
+              <line x1="24" y1="14" x2="19" y2="28" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Compass needle right -->
+              <line x1="24" y1="14" x2="29" y2="28" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Compass base -->
+              <line x1="19" y1="28" x2="29" y2="28" stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- Copper center accent -->
+              <line x1="24" y1="18" x2="24" y2="26" stroke="#B45309" stroke-width="2" stroke-linecap="round"/>
+              <!-- Small copper dot -->
+              <circle cx="24" cy="15" r="1.5" fill="#B45309"/>
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-heading font-bold text-lg tracking-widest text-brand-navy leading-tight">AEC STUDIO</span>
+            <span class="text-[10px] tracking-[0.25em] text-brand-navy-mid/70 font-medium uppercase">Engenharia & Legalização</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="#solucoes" class="nav-link text-sm font-medium text-brand-graphite/80 hover:text-brand-navy transition-colors">Soluções</a>
+          <a href="#autoridade" class="nav-link text-sm font-medium text-brand-graphite/80 hover:text-brand-navy transition-colors">Autoridade</a>
+          <a href="#sobre" class="nav-link text-sm font-medium text-brand-graphite/80 hover:text-brand-navy transition-colors">Sobre o Studio</a>
+          <a href="#contato" class="nav-link text-sm font-medium text-brand-graphite/80 hover:text-brand-navy transition-colors">Solicitar Orçamento</a>
+          <a href="#contato"
+             class="btn-primary inline-flex items-center gap-2 bg-brand-navy text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-brand-navy-mid transition-colors duration-300">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+            Agendar Visita
+          </a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuToggle" class="lg:hidden p-2 text-brand-navy" aria-label="Abrir menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-80 max-w-[85vw] h-screen bg-white shadow-2xl z-50 lg:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-gray-100">
+        <span class="font-heading font-bold text-brand-navy tracking-wider">MENU</span>
+        <button id="menuClose" class="p-2 text-brand-navy" aria-label="Fechar menu">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <nav class="flex flex-col p-6 gap-1">
+        <a href="#solucoes" class="mobile-nav-link py-3 px-4 rounded-lg text-brand-graphite hover:bg-brand-navy/5 font-medium transition-colors">Soluções</a>
+        <a href="#autoridade" class="mobile-nav-link py-3 px-4 rounded-lg text-brand-graphite hover:bg-brand-navy/5 font-medium transition-colors">Autoridade</a>
+        <a href="#sobre" class="mobile-nav-link py-3 px-4 rounded-lg text-brand-graphite hover:bg-brand-navy/5 font-medium transition-colors">Sobre o Studio</a>
+        <a href="#contato" class="mobile-nav-link py-3 px-4 rounded-lg text-brand-graphite hover:bg-brand-navy/5 font-medium transition-colors">Solicitar Orçamento</a>
+        <div class="mt-4 pt-4 border-t border-gray-100">
+          <a href="#contato"
+             class="btn-primary flex items-center justify-center gap-2 bg-brand-navy text-white px-6 py-3 rounded-lg text-sm font-semibold w-full">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+            Agendar Visita
+          </a>
+        </div>
+      </nav>
+    </div>
+    <div id="menuOverlay" class="fixed inset-0 bg-black/40 z-40 hidden lg:hidden"></div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- HERO SECTION                                    -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-brand-navy hero-gradient hero-pattern"></div>
+
+    <!-- Decorative elements -->
+    <div class="absolute top-20 right-10 w-72 h-72 border border-white/5 rounded-full"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 border border-white/5 rounded-full"></div>
+    <div class="absolute top-1/2 right-1/4 w-px h-40 bg-gradient-to-b from-transparent via-brand-copper/20 to-transparent"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-0 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <div class="space-y-8">
+          <!-- Badge -->
+          <div class="reveal inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2">
+            <span class="w-2 h-2 rounded-full bg-brand-copper animate-pulse"></span>
+            <span class="text-xs font-medium text-white/80 tracking-wide uppercase">Curadoria Técnica de Alto Padrão</span>
+          </div>
+
+          <!-- H1 -->
+          <h1 class="reveal font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.1] tracking-tight">
+            Engenharia de Alto Padrão e
+            <span class="relative inline-block">
+              Curadoria Técnica
+              <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-brand-copper to-brand-copper-dark rounded-full"></span>
+            </span>
+            para o seu Patrimônio.
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="reveal text-lg sm:text-xl text-white/70 leading-relaxed max-w-xl">
+            Da regularização de documentos cartorários à entrega da obra finalizada.
+            Soluções completas e seguras para investidores, proprietários e negócios.
+          </p>
+
+          <!-- CTAs -->
+          <div class="reveal flex flex-col sm:flex-row gap-4">
+            <a href="#contato"
+               class="btn-primary inline-flex items-center justify-center gap-2.5 bg-white text-brand-navy px-8 py-4 rounded-xl font-bold text-base hover:bg-brand-copper hover:text-white transition-all duration-300 shadow-lg shadow-black/20">
+              <i data-lucide="file-text" class="w-5 h-5"></i>
+              Solicitar Orçamento Gratuito
+            </a>
+            <a href="https://wa.me/5585991274802?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista%20do%20AEC%20Studio."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center justify-center gap-2.5 border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-base hover:border-brand-copper hover:text-brand-copper transition-all duration-300">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              Falar com Especialista
+            </a>
+          </div>
+
+          <!-- Trust bar -->
+          <div class="reveal flex items-center gap-6 pt-4">
+            <div class="flex items-center gap-2 text-white/50 text-sm">
+              <i data-lucide="shield-check" class="w-4 h-4 text-brand-copper"></i>
+              CREA & CAU
+            </div>
+            <div class="w-px h-4 bg-white/20"></div>
+            <div class="flex items-center gap-2 text-white/50 text-sm">
+              <i data-lucide="award" class="w-4 h-4 text-brand-copper"></i>
+              +300 Projetos
+            </div>
+            <div class="w-px h-4 bg-white/20 hidden sm:block"></div>
+            <div class="hidden sm:flex items-center gap-2 text-white/50 text-sm">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-copper"></i>
+              Fortaleza/CE
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="reveal hidden lg:flex justify-center items-center relative">
+          <div class="relative">
+            <!-- Main architectural visual -->
+            <div class="w-[420px] h-[520px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=840&h=1040&fit=crop&q=80"
+                   alt="Arquitetura corporativa moderna"
+                   class="w-full h-full object-cover"
+                   loading="eager" />
+            </div>
+            <!-- Floating stats card -->
+            <div class="absolute -bottom-6 -left-10 bg-white rounded-xl p-5 shadow-2xl border border-gray-100 min-w-[200px]">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-brand-navy flex items-center justify-center">
+                  <i data-lucide="trending-up" class="w-5 h-5 text-brand-copper"></i>
+                </div>
+                <div>
+                  <p class="text-2xl font-heading font-bold text-brand-navy">100%</p>
+                  <p class="text-xs text-gray-500">Aprovação Legal</p>
+                </div>
+              </div>
+            </div>
+            <!-- Floating badge -->
+            <div class="absolute -top-4 -right-4 bg-brand-copper text-white rounded-xl px-4 py-2.5 shadow-xl">
+              <p class="text-xs font-bold tracking-wide">CURADORIA TÉCNICA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 animate-bounce">
+      <span class="text-[10px] tracking-[0.2em] uppercase">Explorar</span>
+      <i data-lucide="chevron-down" class="w-4 h-4"></i>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- SEÇÃO DE SOLUÇÕES                               -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="solucoes" class="py-24 lg:py-32 bg-brand-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="accent-line rounded-full"></span>
+          <span class="text-xs font-bold tracking-[0.25em] text-brand-copper uppercase">Nossas Soluções</span>
+          <span class="accent-line rounded-full"></span>
+        </div>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-brand-navy leading-tight mb-6">
+          Soluções Técnicas de<br class="hidden sm:block" /> Ponta a Ponta
+        </h2>
+        <p class="text-lg text-gray-500 leading-relaxed">
+          Cada projeto é conduzido por profissionais habilitados com registro ativo junto ao CREA-CE e CAU-CE, garantindo conformidade técnica e legal em todas as etapas.
+        </p>
+      </div>
+
+      <!-- Service Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger">
+
+        <!-- Card 1: Regularização -->
+        <div class="service-card reveal-child bg-white rounded-2xl p-8 border border-gray-100 shadow-sm group cursor-default">
+          <div class="w-14 h-14 rounded-xl bg-brand-navy/5 flex items-center justify-center mb-6">
+            <i data-lucide="scale" class="w-7 h-7 text-brand-navy-mid card-icon"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-navy mb-3 leading-snug">
+            Regularização Cartorária e Legalização
+          </h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-5">
+            Regularização de imóveis, retificação de área, legalização de obras e projetos especializados para Usucapião — nossa maior área de expertise com histórico robusto de entregas.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[10px] font-semibold tracking-wide text-brand-copper bg-brand-copper/5 px-3 py-1 rounded-full uppercase">Usucapião</span>
+            <span class="text-[10px] font-semibold tracking-wide text-brand-navy/60 bg-brand-navy/5 px-3 py-1 rounded-full uppercase">Retificação</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Arquitetura -->
+        <div class="service-card reveal-child bg-white rounded-2xl p-8 border border-gray-100 shadow-sm group cursor-default">
+          <div class="w-14 h-14 rounded-xl bg-brand-navy/5 flex items-center justify-center mb-6">
+            <i data-lucide="pen-tool" class="w-7 h-7 text-brand-navy-mid card-icon"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-navy mb-3 leading-snug">
+            Arquitetura e Interiores
+          </h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-5">
+            Design de Interiores residencial e comercial com projeto arquitetônico assinado por Arquiteto e Urbanista — espaços funcionais com estética de alto padrão.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[10px] font-semibold tracking-wide text-brand-copper bg-brand-copper/5 px-3 py-1 rounded-full uppercase">Interiores</span>
+            <span class="text-[10px] font-semibold tracking-wide text-brand-navy/60 bg-brand-navy/5 px-3 py-1 rounded-full uppercase">Projeto Arq.</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Engenharia -->
+        <div class="service-card reveal-child bg-white rounded-2xl p-8 border border-gray-100 shadow-sm group cursor-default">
+          <div class="w-14 h-14 rounded-xl bg-brand-navy/5 flex items-center justify-center mb-6">
+            <i data-lucide="hard-hat" class="w-7 h-7 text-brand-navy-mid card-icon"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-navy mb-3 leading-snug">
+            Engenharia e Estrutura
+          </h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-5">
+            Projetos Estrutural, Hidrossanitário e Elétrico/Eletrotécnico sob responsabilidade técnica do Engenheiro Civil com ART registrada.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[10px] font-semibold tracking-wide text-brand-copper bg-brand-copper/5 px-3 py-1 rounded-full uppercase">Estrutural</span>
+            <span class="text-[10px] font-semibold tracking-wide text-brand-navy/60 bg-brand-navy/5 px-3 py-1 rounded-full uppercase">Instalações</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Gestão -->
+        <div class="service-card reveal-child bg-white rounded-2xl p-8 border border-gray-100 shadow-sm group cursor-default">
+          <div class="w-14 h-14 rounded-xl bg-brand-navy/5 flex items-center justify-center mb-6">
+            <i data-lucide="clipboard-check" class="w-7 h-7 text-brand-navy-mid card-icon"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-navy mb-3 leading-snug">
+            Gestão de Obras
+          </h3>
+          <p class="text-sm text-gray-500 leading-relaxed mb-5">
+            Gerenciamento e acompanhamento técnico completo de ponta a ponta: cronograma, qualidade, custos e conformidade legal integrados.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[10px] font-semibold tracking-wide text-brand-copper bg-brand-copper/5 px-3 py-1 rounded-full uppercase">Gestão</span>
+            <span class="text-[10px] font-semibold tracking-wide text-brand-navy/60 bg-brand-navy/5 px-3 py-1 rounded-full uppercase">Fiscalização</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA below services -->
+      <div class="text-center mt-16 reveal">
+        <a href="#contato"
+           class="inline-flex items-center gap-2 text-brand-navy font-semibold hover:text-brand-copper transition-colors group">
+          <span>Solicite uma proposta personalizada</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- SEÇÃO DE AUTORIDADE / NÚMEROS                   -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="autoridade" class="relative py-24 lg:py-32 bg-brand-navy overflow-hidden">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 authority-grid-bg"></div>
+
+    <!-- Decorative elements -->
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-copper/30 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-copper/30 to-transparent"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="accent-line rounded-full"></span>
+          <span class="text-xs font-bold tracking-[0.25em] text-brand-copper uppercase">Nossa Autoridade</span>
+          <span class="accent-line rounded-full"></span>
+        </div>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-6">
+          Resultados que Falam<br class="hidden sm:block" /> por Si Mesmos
+        </h2>
+        <p class="text-lg text-white/50 leading-relaxed">
+          Números construídos com rigor técnico, responsabilidade e compromisso com a excelência em cada projeto entregue.
+        </p>
+      </div>
+
+      <!-- Metrics Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 reveal-stagger">
+
+        <!-- Metric 1 -->
+        <div class="reveal-child text-center p-10 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-copper/30 transition-all duration-500">
+          <div class="w-16 h-16 rounded-full bg-brand-copper/10 flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="briefcase" class="w-7 h-7 text-brand-copper"></i>
+          </div>
+          <div class="font-heading font-extrabold text-5xl lg:text-6xl text-white mb-2">
+            +<span class="counter-value" data-target="300">0</span>
+          </div>
+          <p class="text-white/70 font-medium text-base mb-2">Projetos e Usucapiões</p>
+          <p class="text-white/40 text-sm">Entregues com sucesso e aprovados pelos órgãos competentes</p>
+        </div>
+
+        <!-- Metric 2 -->
+        <div class="reveal-child text-center p-10 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-copper/30 transition-all duration-500">
+          <div class="w-16 h-16 rounded-full bg-brand-copper/10 flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="check-circle-2" class="w-7 h-7 text-brand-copper"></i>
+          </div>
+          <div class="font-heading font-extrabold text-5xl lg:text-6xl text-white mb-2">
+            <span class="counter-value" data-target="100">0</span>%
+          </div>
+          <p class="text-white/70 font-medium text-base mb-2">Aprovação Legal</p>
+          <p class="text-white/40 text-sm">Curadoria técnica de documentos com taxa integral de conformidade</p>
+        </div>
+
+        <!-- Metric 3 -->
+        <div class="reveal-child text-center p-10 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-copper/30 transition-all duration-500">
+          <div class="w-16 h-16 rounded-full bg-brand-copper/10 flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="users" class="w-7 h-7 text-brand-copper"></i>
+          </div>
+          <div class="font-heading font-extrabold text-5xl lg:text-6xl text-white mb-2">
+            <span class="counter-value" data-target="2">0</span>
+          </div>
+          <p class="text-white/70 font-medium text-base mb-2">Equipe Multidisciplinar</p>
+          <p class="text-white/40 text-sm">Engenharia & Arquitetura com profissionais habilitados CREA e CAU</p>
+        </div>
+
+      </div>
+
+      <!-- Authority bottom bar -->
+      <div class="mt-16 pt-10 border-t border-white/10 reveal">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 text-white/40 text-sm">
+          <div class="flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-brand-copper/60"></i>
+            Registro CREA-CE Ativo
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-brand-copper/60"></i>
+            Registro CAU-CE Ativo
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-brand-copper/60"></i>
+            Fortaleza e Região Metropolitana
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- SEÇÃO SOBRE O STUDIO                            -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="sobre" class="py-24 lg:py-32 bg-brand-offwhite">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+        <!-- Visual side -->
+        <div class="reveal relative order-2 lg:order-1">
+          <div class="relative">
+            <div class="w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=1000&fit=crop&q=80"
+                   alt="Escritório corporativo moderno"
+                   class="w-full h-full object-cover"
+                   loading="lazy" />
+            </div>
+            <!-- Overlapping accent card -->
+            <div class="absolute -bottom-8 -right-4 sm:-right-8 bg-brand-navy rounded-2xl p-6 sm:p-8 shadow-2xl max-w-[260px]">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-brand-copper/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i data-lucide="gem" class="w-5 h-5 text-brand-copper"></i>
+                </div>
+                <div>
+                  <p class="text-white font-heading font-bold text-sm mb-1">Curadoria Técnica</p>
+                  <p class="text-white/50 text-xs leading-relaxed">Cada detalhe revisado para garantir máxima conformidade e segurança patrimonial.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Copper accent line -->
+            <div class="absolute -top-4 -left-4 w-20 h-20 border-l-[3px] border-t-[3px] border-brand-copper/40 rounded-tl-xl"></div>
+          </div>
+        </div>
+
+        <!-- Text side -->
+        <div class="order-1 lg:order-2 space-y-8 reveal">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <span class="accent-line rounded-full"></span>
+              <span class="text-xs font-bold tracking-[0.25em] text-brand-copper uppercase">Sobre o Studio</span>
+            </div>
+            <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy leading-tight mb-6">
+              Um Ecossistema de Soluções Técnicas e de Gestão
+            </h2>
+          </div>
+
+          <div class="space-y-5 text-gray-600 leading-relaxed">
+            <p>
+              O <strong class="text-brand-navy">AEC Studio</strong> nasceu da premissa de que engenharia, arquitetura e legalização não podem ser tratadas como serviços isolados. Atuamos como um escritório integrado, onde cada solução é parte de um sistema projetado para proteger e valorizar o patrimônio dos nossos clientes.
+            </p>
+            <p>
+              Nosso modelo de atuação combina rigor técnico com agilidade operacional. Da análise documental inicial à entrega final do projeto, cada etapa é conduzida com metodologia própria de curadoria técnica, eliminando retrabalho e garantindo aprovação junto a cartórios, prefeituras e órgãos reguladores.
+            </p>
+            <p>
+              Contamos com corpo técnico próprio liderado por <strong class="text-brand-navy">Engenheiro Civil</strong> atuante no setor de incorporação e por <strong class="text-brand-navy">Arquiteto e Urbanista</strong>, garantindo conformidade com o CREA, CAU e órgãos municipais/cartorários.
+            </p>
+          </div>
+
+          <!-- Key differentials -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-gray-100">
+              <i data-lucide="target" class="w-5 h-5 text-brand-copper flex-shrink-0 mt-0.5"></i>
+              <div>
+                <p class="font-semibold text-brand-navy text-sm">Foco em Resultado</p>
+                <p class="text-xs text-gray-500 mt-1">Curadoria orientada à aprovação e entrega</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-gray-100">
+              <i data-lucide="lock" class="w-5 h-5 text-brand-copper flex-shrink-0 mt-0.5"></i>
+              <div>
+                <p class="font-semibold text-brand-navy text-sm">Segurança Jurídica</p>
+                <p class="text-xs text-gray-500 mt-1">Documentação blindada contra inconsistências</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-gray-100">
+              <i data-lucide="layers" class="w-5 h-5 text-brand-copper flex-shrink-0 mt-0.5"></i>
+              <div>
+                <p class="font-semibold text-brand-navy text-sm">Solução Integrada</p>
+                <p class="text-xs text-gray-500 mt-1">Engenharia, Arquitetura e Legal em um só lugar</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-gray-100">
+              <i data-lucide="clock" class="w-5 h-5 text-brand-copper flex-shrink-0 mt-0.5"></i>
+              <div>
+                <p class="font-semibold text-brand-navy text-sm">Agilidade</p>
+                <p class="text-xs text-gray-500 mt-1">Processos otimizados para prazos reduzidos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- SEÇÃO DE CONVERSÃO / FORMULÁRIO                 -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="contato" class="py-24 lg:py-32 bg-brand-navy relative overflow-hidden">
+    <!-- Decorative -->
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-copper/30 to-transparent"></div>
+    <div class="absolute top-20 right-0 w-96 h-96 bg-brand-copper/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 left-0 w-72 h-72 bg-brand-navy-mid/20 rounded-full blur-3xl"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+        <!-- Left: Info -->
+        <div class="reveal space-y-8">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <span class="accent-line rounded-full"></span>
+              <span class="text-xs font-bold tracking-[0.25em] text-brand-copper uppercase">Fale Conosco</span>
+            </div>
+            <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white leading-tight mb-6">
+              Solicite seu Orçamento ou Agende uma Visita Técnica
+            </h2>
+            <p class="text-lg text-white/60 leading-relaxed">
+              Preencha o formulário ao lado e nossa equipe entrará em contato via WhatsApp com uma análise prévia do seu projeto. Atendimento ágil e sem compromisso.
+            </p>
+          </div>
+
+          <!-- Contact info cards -->
+          <div class="space-y-4 pt-4">
+            <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="w-10 h-10 rounded-lg bg-brand-copper/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="phone" class="w-5 h-5 text-brand-copper"></i>
+              </div>
+              <div>
+                <p class="text-xs text-white/40 uppercase tracking-wider font-medium">WhatsApp Comercial</p>
+                <p class="text-white font-semibold">(85) 99127-4802</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="w-10 h-10 rounded-lg bg-brand-copper/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="mail" class="w-5 h-5 text-brand-copper"></i>
+              </div>
+              <div>
+                <p class="text-xs text-white/40 uppercase tracking-wider font-medium">E-mail Corporativo</p>
+                <p class="text-white font-semibold">empresa.aecstudio@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="w-10 h-10 rounded-lg bg-brand-copper/10 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5 text-brand-copper"></i>
+              </div>
+              <div>
+                <p class="text-xs text-white/40 uppercase tracking-wider font-medium">Área de Atuação</p>
+                <p class="text-white font-semibold">Fortaleza/CE e Região Metropolitana</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="reveal">
+          <div class="bg-white rounded-2xl p-8 sm:p-10 shadow-2xl border border-gray-100">
+
+            <!-- Tabs -->
+            <div class="flex gap-2 mb-8">
+              <button type="button" class="tab-btn active flex-1 py-3 px-4 rounded-xl border-2 border-gray-200 text-sm font-semibold text-center transition-all" data-tab="orcamento">
+                <i data-lucide="file-text" class="w-4 h-4 inline-block mr-1 -mt-0.5"></i>
+                Orçamento
+              </button>
+              <button type="button" class="tab-btn flex-1 py-3 px-4 rounded-xl border-2 border-gray-200 text-sm font-semibold text-brand-graphite/60 text-center transition-all" data-tab="visita">
+                <i data-lucide="calendar" class="w-4 h-4 inline-block mr-1 -mt-0.5"></i>
+                Visita Técnica
+              </button>
+            </div>
+
+            <form id="contactForm" novalidate>
+              <!-- Hidden tab type -->
+              <input type="hidden" name="tipo_solicitacao" id="tipoSolicitacao" value="Orçamento Técnico" />
+
+              <!-- Nome -->
+              <div class="mb-5">
+                <label for="nome" class="block text-sm font-semibold text-brand-graphite mb-2">Nome Completo</label>
+                <input type="text" id="nome" name="nome" required
+                       class="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-brand-graphite placeholder-gray-400 outline-none transition-all text-sm"
+                       placeholder="Seu nome completo" />
+              </div>
+
+              <!-- Telefone -->
+              <div class="mb-5">
+                <label for="telefone" class="block text-sm font-semibold text-brand-graphite mb-2">Telefone / WhatsApp</label>
+                <input type="tel" id="telefone" name="telefone" required
+                       class="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-brand-graphite placeholder-gray-400 outline-none transition-all text-sm"
+                       placeholder="(85) 99999-9999" />
+              </div>
+
+              <!-- Serviço -->
+              <div class="mb-5">
+                <label for="servico" class="block text-sm font-semibold text-brand-graphite mb-2">Tipo de Serviço Desejado</label>
+                <div class="relative">
+                  <select id="servico" name="servico" required
+                          class="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-brand-graphite outline-none transition-all text-sm appearance-none bg-white cursor-pointer">
+                    <option value="" disabled selected>Selecione o serviço</option>
+                    <option value="Regularização / Usucapião">Regularização / Usucapião</option>
+                    <option value="Projeto Arquitetônico / Interiores">Projeto Arquitetônico / Interiores</option>
+                    <option value="Projeto Estrutural / Instalações">Projeto Estrutural / Instalações</option>
+                    <option value="Gerenciamento de Obra">Gerenciamento de Obra</option>
+                  </select>
+                  <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                </div>
+              </div>
+
+              <!-- Endereço -->
+              <div class="mb-5">
+                <label for="endereco" class="block text-sm font-semibold text-brand-graphite mb-2">Endereço / Local do Imóvel</label>
+                <input type="text" id="endereco" name="endereco" required
+                       class="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-brand-graphite placeholder-gray-400 outline-none transition-all text-sm"
+                       placeholder="Bairro, rua ou referência do imóvel" />
+              </div>
+
+              <!-- Período -->
+              <div class="mb-8">
+                <label for="periodo" class="block text-sm font-semibold text-brand-graphite mb-2">Melhor Período para Atendimento</label>
+                <div class="relative">
+                  <select id="periodo" name="periodo" required
+                          class="form-input w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-brand-graphite outline-none transition-all text-sm appearance-none bg-white cursor-pointer">
+                    <option value="" disabled selected>Selecione o período</option>
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                  </select>
+                  <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                </div>
+              </div>
+
+              <!-- Error message area -->
+              <div id="formError" class="hidden mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm font-medium">
+                <i data-lucide="alert-circle" class="w-4 h-4 inline-block mr-1 -mt-0.5"></i>
+                <span id="formErrorText">Por favor, preencha todos os campos obrigatórios.</span>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" id="submitBtn"
+                      class="btn-primary w-full flex items-center justify-center gap-3 bg-brand-navy text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-brand-copper transition-all duration-300 shadow-lg">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.458-1.495A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.24 0-4.326-.724-6.022-1.952a.75.75 0 00-.64-.118l-3.074 1.03 1.03-3.074a.75.75 0 00-.117-.64A9.935 9.935 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                </svg>
+                Enviar Solicitação via WhatsApp
+              </button>
+
+              <p class="text-center text-xs text-gray-400 mt-4">
+                Seus dados serão enviados diretamente para nosso WhatsApp comercial. Sem spam.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FOOTER                                          -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <footer class="bg-brand-graphite pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+        <!-- Col 1: Logo & Description -->
+        <div class="lg:col-span-2">
+          <a href="#hero" class="flex items-center gap-3 mb-6 group">
+            <div class="relative w-10 h-10">
+              <svg viewBox="0 0 48 48" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="24,2 44,14 44,34 24,46 4,34 4,14"
+                  fill="none" stroke="#F8FAFC" stroke-width="2" opacity="0.5"/>
+                <circle cx="24" cy="24" r="10" fill="none" stroke="#F8FAFC" stroke-width="1.2" opacity="0.3"/>
+                <line x1="24" y1="14" x2="19" y2="28" stroke="#F8FAFC" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                <line x1="24" y1="14" x2="29" y2="28" stroke="#F8FAFC" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                <line x1="19" y1="28" x2="29" y2="28" stroke="#F8FAFC" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+                <line x1="24" y1="18" x2="24" y2="26" stroke="#B45309" stroke-width="1.8" stroke-linecap="round"/>
+                <circle cx="24" cy="15" r="1.3" fill="#B45309"/>
+              </svg>
+            </div>
+            <div>
+              <span class="font-heading font-bold text-base tracking-widest text-white/90 leading-tight block">AEC STUDIO</span>
+              <span class="text-[9px] tracking-[0.2em] text-white/30 font-medium uppercase">Engenharia & Legalização</span>
+            </div>
+          </a>
+          <p class="text-white/40 text-sm leading-relaxed max-w-md mb-6">
+            Soluções em Engenharia, Arquitetura e Legalização Imobiliária. Projetos executados por profissionais devidamente habilitados e registrados junto ao CREA-CE e CAU-CE.
+          </p>
+          <div class="flex items-center gap-2 text-white/30 text-xs">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+            Fortaleza/CE e Região Metropolitana
+          </div>
+        </div>
+
+        <!-- Col 2: Links -->
+        <div>
+          <h4 class="font-heading font-bold text-white/80 text-sm mb-6 tracking-wider uppercase">Navegação</h4>
+          <ul class="space-y-3">
+            <li><a href="#solucoes" class="text-white/40 hover:text-brand-copper text-sm transition-colors">Soluções</a></li>
+            <li><a href="#autoridade" class="text-white/40 hover:text-brand-copper text-sm transition-colors">Autoridade</a></li>
+            <li><a href="#sobre" class="text-white/40 hover:text-brand-copper text-sm transition-colors">Sobre o Studio</a></li>
+            <li><a href="#contato" class="text-white/40 hover:text-brand-copper text-sm transition-colors">Solicitar Orçamento</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact -->
+        <div>
+          <h4 class="font-heading font-bold text-white/80 text-sm mb-6 tracking-wider uppercase">Contato</h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="https://wa.me/5585991274802" target="_blank" rel="noopener" class="flex items-center gap-2 text-white/40 hover:text-brand-copper text-sm transition-colors">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                (85) 99127-4802
+              </a>
+            </li>
+            <li>
+              <a href="mailto:empresa.aecstudio@gmail.com" class="flex items-center gap-2 text-white/40 hover:text-brand-copper text-sm transition-colors">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                empresa.aecstudio@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 border-t border-white/10">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-white/25 text-xs text-center md:text-left">
+            &copy; 2026 AEC Studio — Soluções em Engenharia, Arquitetura e Legalização Imobiliária.<br class="sm:hidden" />
+            Projetos executados por profissionais devidamente habilitados e registrados junto ao CREA-CE e CAU-CE.
+          </p>
+          <p class="text-white/15 text-[10px]">
+            Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- BOTÃO FLUTUANTE WHATSAPP                        -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <a href="https://wa.me/5585991274802?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista%20do%20AEC%20Studio."
+     target="_blank" rel="noopener"
+     class="whatsapp-float fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 border-2 border-white/20"
+     aria-label="Conversar no WhatsApp">
+    <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.458-1.495A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.24 0-4.326-.724-6.022-1.952a.75.75 0 00-.64-.118l-3.074 1.03 1.03-3.074a.75.75 0 00-.117-.64A9.935 9.935 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+    </svg>
+  </a>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- JAVASCRIPT                                      -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // ─── Initialize Lucide Icons ───
+      lucide.createIcons();
+
+      // ─── Header scroll effect ───
+      const header = document.getElementById('header');
+      let lastScrollY = 0;
+
+      function updateHeader() {
+        const scrollY = window.scrollY;
+
+        if (scrollY > 60) {
+          header.classList.add('bg-white/95', 'backdrop-blur-xl', 'shadow-sm', 'border-b', 'border-gray-100/50');
+          header.classList.remove('bg-transparent');
+        } else {
+          header.classList.remove('bg-white/95', 'backdrop-blur-xl', 'shadow-sm', 'border-b', 'border-gray-100/50');
+          header.classList.add('bg-transparent');
+        }
+
+        lastScrollY = scrollY;
+      }
+
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
+
+      // ─── Mobile Menu ───
+      const menuToggle = document.getElementById('menuToggle');
+      const menuClose = document.getElementById('menuClose');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function openMenu() {
+        mobileMenu.classList.add('open');
+        menuOverlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('open');
+        menuOverlay.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      menuToggle.addEventListener('click', openMenu);
+      menuClose.addEventListener('click', closeMenu);
+      menuOverlay.addEventListener('click', closeMenu);
+      mobileNavLinks.forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      // ─── Smooth scroll for anchor links ───
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          var targetId = this.getAttribute('href');
+          var targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            var headerHeight = header.offsetHeight;
+            var targetPosition = targetEl.getBoundingClientRect().top + window.scrollY - headerHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+          closeMenu();
+        });
+      });
+
+      // ─── Scroll Reveal ───
+      var revealElements = document.querySelectorAll('.reveal, .reveal-stagger');
+
+      function checkReveal() {
+        var windowHeight = window.innerHeight;
+        revealElements.forEach(function (el) {
+          var elementTop = el.getBoundingClientRect().top;
+          var revealPoint = windowHeight - 100;
+          if (elementTop < revealPoint) {
+            el.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', checkReveal, { passive: true });
+      checkReveal();
+
+      // ─── Counter Animation ───
+      var counters = document.querySelectorAll('.counter-value');
+      var countersAnimated = false;
+
+      function animateCounters() {
+        if (countersAnimated) return;
+        var authoritySection = document.getElementById('autoridade');
+        if (!authoritySection) return;
+
+        var sectionTop = authoritySection.getBoundingClientRect().top;
+        if (sectionTop < window.innerHeight - 100) {
+          countersAnimated = true;
+          counters.forEach(function (counter) {
+            var target = parseInt(counter.getAttribute('data-target'));
+            var duration = 2000;
+            var startTime = null;
+
+            function updateCounter(timestamp) {
+              if (!startTime) startTime = timestamp;
+              var progress = Math.min((timestamp - startTime) / duration, 1);
+              var easeOut = 1 - Math.pow(1 - progress, 3);
+              counter.textContent = Math.floor(easeOut * target);
+              if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+              } else {
+                counter.textContent = target;
+              }
+            }
+
+            requestAnimationFrame(updateCounter);
+          });
+        }
+      }
+
+      window.addEventListener('scroll', animateCounters, { passive: true });
+      animateCounters();
+
+      // ─── Form Tabs ───
+      var tabBtns = document.querySelectorAll('.tab-btn');
+      var tipoSolicitacao = document.getElementById('tipoSolicitacao');
+
+      tabBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          tabBtns.forEach(function (b) { b.classList.remove('active'); });
+          this.classList.add('active');
+          var tab = this.getAttribute('data-tab');
+          tipoSolicitacao.value = tab === 'visita' ? 'Visita Técnica / Consultoria' : 'Orçamento Técnico';
+        });
+      });
+
+      // ─── Phone Mask ───
+      var telefoneInput = document.getElementById('telefone');
+
+      telefoneInput.addEventListener('input', function (e) {
+        var value = e.target.value.replace(/\D/g, '');
+        if (value.length <= 2) {
+          e.target.value = value.length ? '(' + value : '';
+        } else if (value.length <= 7) {
+          e.target.value = '(' + value.substring(0, 2) + ') ' + value.substring(2);
+        } else if (value.length <= 11) {
+          e.target.value = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7);
+        } else {
+          e.target.value = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7, 11);
+        }
+      });
+
+      // ─── Form Submission → WhatsApp ───
+      var contactForm = document.getElementById('contactForm');
+      var formError = document.getElementById('formError');
+      var formErrorText = document.getElementById('formErrorText');
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var nome = document.getElementById('nome').value.trim();
+        var telefone = document.getElementById('telefone').value.trim();
+        var servico = document.getElementById('servico').value;
+        var endereco = document.getElementById('endereco').value.trim();
+        var periodo = document.getElementById('periodo').value;
+        var tipo = tipoSolicitacao.value;
+
+        // Reset error states
+        formError.classList.add('hidden');
+        document.querySelectorAll('.form-input').forEach(function (input) {
+          input.classList.remove('border-red-400');
+        });
+
+        // Validation
+        var isValid = true;
+        var emptyFields = [];
+
+        if (!nome) {
+          isValid = false;
+          emptyFields.push('nome');
+          document.getElementById('nome').classList.add('border-red-400');
+        }
+        if (!telefone || telefone.replace(/\D/g, '').length < 10) {
+          isValid = false;
+          emptyFields.push('telefone');
+          document.getElementById('telefone').classList.add('border-red-400');
+        }
+        if (!servico) {
+          isValid = false;
+          emptyFields.push('servico');
+          document.getElementById('servico').classList.add('border-red-400');
+        }
+        if (!endereco) {
+          isValid = false;
+          emptyFields.push('endereco');
+          document.getElementById('endereco').classList.add('border-red-400');
+        }
+        if (!periodo) {
+          isValid = false;
+          emptyFields.push('periodo');
+          document.getElementById('periodo').classList.add('border-red-400');
+        }
+
+        if (!isValid) {
+          formError.classList.remove('hidden');
+          formErrorText.textContent = 'Por favor, preencha todos os campos obrigatórios.';
+          return;
+        }
+
+        // Build WhatsApp message
+        var message =
+          'Olá AEC Studio, gostaria de solicitar um atendimento técnico. Seguem os dados:\n\n' +
+          '- *Nome:* ' + nome + '\n' +
+          '- *WhatsApp:* ' + telefone + '\n' +
+          '- *Serviço:* ' + servico + '\n' +
+          '- *Endereço do Imóvel:* ' + endereco + '\n' +
+          '- *Período Preferencial:* ' + periodo + '\n' +
+          '- *Tipo de Solicitação:* ' + tipo;
+
+        var encodedMessage = encodeURIComponent(message);
+        var whatsappURL = 'https://wa.me/5585991274802?text=' + encodedMessage;
+
+        window.open(whatsappURL, '_blank');
+
+        // Visual feedback
+        var submitBtn = document.getElementById('submitBtn');
+        submitBtn.textContent = 'Redirecionando para o WhatsApp...';
+        submitBtn.classList.add('bg-green-600');
+        submitBtn.classList.remove('bg-brand-navy');
+
+        setTimeout(function () {
+          submitBtn.innerHTML = '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.458-1.495A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.24 0-4.326-.724-6.022-1.952a.75.75 0 00-.64-.118l-3.074 1.03 1.03-3.074a.75.75 0 00-.117-.64A9.935 9.935 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Enviar Solicitação via WhatsApp';
+          submitBtn.classList.remove('bg-green-600');
+          submitBtn.classList.add('bg-brand-navy');
+        }, 3000);
+      });
+
+    });
+  </script>
+
+</body>
+</html>
