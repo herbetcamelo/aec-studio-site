@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AEC Studio | Engenharia & Legalização — Curadoria Técnica de Alto Padrão</title>
-  <meta name="description" content="AEC Studio — Engenharia de Alto Padrão, Legalização Imobiliária e Curadoria Técnica. Mais de 300 projetos entregues em Fortaleza/CE." />
+  <meta name="description" content="AEC Studio — Engenharia de Alto Padrão, Legalização Imobiliária e Curadoria Técnica. Usucapião, regularização de imóveis e projetos com ART. Mais de 300 projetos técnicos desde 2015 em Fortaleza/CE." />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -36,6 +36,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Google Ads: preencha id (AW-...) e label da conversão para ativar a medição -->
+  <script>
+    window.AEC_ADS = { id: '', label: '' };
+    if (window.AEC_ADS.id) {
+      var gs = document.createElement('script');
+      gs.async = true;
+      gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.AEC_ADS.id;
+      document.head.appendChild(gs);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', window.AEC_ADS.id);
+    }
+    window.aecTrackLead = function (origem) {
+      if (window.gtag && window.AEC_ADS.id && window.AEC_ADS.label) {
+        gtag('event', 'conversion', { send_to: window.AEC_ADS.id + '/' + window.AEC_ADS.label, event_label: origem });
+      }
+    };
+  </script>
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -254,6 +274,7 @@
 
         <!-- Desktop Nav -->
         <nav class="hidden lg:flex items-center gap-8">
+          <a href="#usucapiao" class="nav-link text-sm font-medium text-brand-graphite/80 hover:text-brand-navy transition-colors">Usucapião</a>
           <a href="#solucoes" class="nav-link text-sm font-medium text-brand-graphite/80 hover:text-brand-navy transition-colors">Soluções</a>
           <a href="#autoridade" class="nav-link text-sm font-medium text-brand-graphite/80 hover:text-brand-navy transition-colors">Autoridade</a>
           <a href="#sobre" class="nav-link text-sm font-medium text-brand-graphite/80 hover:text-brand-navy transition-colors">Sobre o Studio</a>
@@ -281,6 +302,7 @@
         </button>
       </div>
       <nav class="flex flex-col p-6 gap-1">
+        <a href="#usucapiao" class="mobile-nav-link py-3 px-4 rounded-lg text-brand-graphite hover:bg-brand-navy/5 font-medium transition-colors">Usucapião</a>
         <a href="#solucoes" class="mobile-nav-link py-3 px-4 rounded-lg text-brand-graphite hover:bg-brand-navy/5 font-medium transition-colors">Soluções</a>
         <a href="#autoridade" class="mobile-nav-link py-3 px-4 rounded-lg text-brand-graphite hover:bg-brand-navy/5 font-medium transition-colors">Autoridade</a>
         <a href="#sobre" class="mobile-nav-link py-3 px-4 rounded-lg text-brand-graphite hover:bg-brand-navy/5 font-medium transition-colors">Sobre o Studio</a>
@@ -361,7 +383,7 @@
             <div class="w-px h-4 bg-white/20"></div>
             <div class="flex items-center gap-2 text-white/50 text-sm">
               <i data-lucide="award" class="w-4 h-4 text-brand-copper"></i>
-              +300 Projetos
+              +300 projetos desde 2015
             </div>
             <div class="w-px h-4 bg-white/20 hidden sm:block"></div>
             <div class="hidden sm:flex items-center gap-2 text-white/50 text-sm">
@@ -385,11 +407,11 @@
             <div class="absolute -bottom-6 -left-10 bg-white rounded-xl p-5 shadow-2xl border border-gray-100 min-w-[200px]">
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-lg bg-brand-navy flex items-center justify-center">
-                  <i data-lucide="trending-up" class="w-5 h-5 text-brand-copper"></i>
+                  <i data-lucide="file-check-2" class="w-5 h-5 text-brand-copper"></i>
                 </div>
                 <div>
-                  <p class="text-2xl font-heading font-bold text-brand-navy">100%</p>
-                  <p class="text-xs text-gray-500">Aprovação Legal</p>
+                  <p class="text-2xl font-heading font-bold text-brand-navy">ART</p>
+                  <p class="text-xs text-gray-500">em todos os projetos</p>
                 </div>
               </div>
             </div>
@@ -406,6 +428,76 @@
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 animate-bounce">
       <span class="text-[10px] tracking-[0.2em] uppercase">Explorar</span>
       <i data-lucide="chevron-down" class="w-4 h-4"></i>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- SEÇÃO USUCAPIÃO E REGULARIZAÇÃO (anúncios)      -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section id="usucapiao" class="py-24 lg:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="accent-line rounded-full"></span>
+          <span class="text-xs font-bold tracking-[0.25em] text-brand-copper uppercase">Usucapião e Regularização</span>
+          <span class="accent-line rounded-full"></span>
+        </div>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-brand-navy leading-tight mb-6">
+          Regularize seu imóvel com a<br class="hidden sm:block" /> parte técnica resolvida
+        </h2>
+        <p class="text-lg text-gray-500 leading-relaxed">
+          Atendemos Fortaleza e Região Metropolitana. Casa ou terreno sem escritura registrada, imóvel de herança, contrato de gaveta ou área diferente da matrícula. Cuidamos da parte técnica do levantamento até o registro no cartório.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+        <!-- O que está incluído -->
+        <div class="reveal bg-brand-offwhite rounded-2xl p-8 sm:p-10 border border-gray-100">
+          <h3 class="font-heading font-bold text-xl text-brand-navy mb-6">O que está incluído</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-copper flex-shrink-0 mt-0.5"></i><span class="text-gray-600">Levantamento georreferenciado do imóvel (SIRGAS 2000)</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-copper flex-shrink-0 mt-0.5"></i><span class="text-gray-600">Planta e memorial descritivo com ART de engenheiro civil</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-copper flex-shrink-0 mt-0.5"></i><span class="text-gray-600">Levantamento da construção, quando houver, para a matrícula já sair com ela</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-copper flex-shrink-0 mt-0.5"></i><span class="text-gray-600">Envio do polígono ao Mapa do Registro de Imóveis (ONR)</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-copper flex-shrink-0 mt-0.5"></i><span class="text-gray-600">Acompanhamento das exigências técnicas do cartório</span></li>
+          </ul>
+          <p class="text-xs text-gray-400 mt-6 leading-relaxed">
+            Nosso escopo é exclusivamente técnico. O requerimento e a ata notarial são feitos por advogado, como exige a lei, e a coleta das assinaturas dos vizinhos fica com o contratante ou seu advogado. Indicamos parceiros ou trabalhamos com o seu.
+          </p>
+        </div>
+
+        <!-- Como funciona -->
+        <div class="reveal">
+          <h3 class="font-heading font-bold text-xl text-brand-navy mb-6">Como funciona</h3>
+          <ol class="space-y-6">
+            <li class="flex items-start gap-4">
+              <span class="w-9 h-9 rounded-full bg-brand-navy text-white font-heading font-bold flex items-center justify-center flex-shrink-0">1</span>
+              <div><p class="font-semibold text-brand-navy">Análise prévia</p><p class="text-sm text-gray-500 mt-1">Você envia pelo WhatsApp os documentos que tiver (matrícula, contrato, IPTU). Avaliamos o caminho mais adequado.</p></div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-9 h-9 rounded-full bg-brand-navy text-white font-heading font-bold flex items-center justify-center flex-shrink-0">2</span>
+              <div><p class="font-semibold text-brand-navy">Proposta clara</p><p class="text-sm text-gray-500 mt-1">Escopo, prazo e valor por escrito, com pagamento por etapa.</p></div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-9 h-9 rounded-full bg-brand-navy text-white font-heading font-bold flex items-center justify-center flex-shrink-0">3</span>
+              <div><p class="font-semibold text-brand-navy">Levantamento e projeto</p><p class="text-sm text-gray-500 mt-1">Medição em campo, planta, memorial e ART.</p></div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-9 h-9 rounded-full bg-brand-navy text-white font-heading font-bold flex items-center justify-center flex-shrink-0">4</span>
+              <div><p class="font-semibold text-brand-navy">Cartório até o registro</p><p class="text-sm text-gray-500 mt-1">Acompanhamos o protocolo e respondemos às exigências técnicas.</p></div>
+            </li>
+          </ol>
+          <a href="https://wa.me/5585991274802?text=Ol%C3%A1%2C%20quero%20regularizar%20meu%20im%C3%B3vel%20(usucapi%C3%A3o).%20Pode%20me%20ajudar%3F"
+             target="_blank" rel="noopener" data-lead="usucapiao_secao"
+             class="btn-primary mt-10 inline-flex items-center justify-center gap-2.5 bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-[#1ebe5b] transition-all duration-300 shadow-lg w-full sm:w-auto">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Quero uma análise prévia
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -555,20 +647,20 @@
           <div class="font-heading font-extrabold text-5xl lg:text-6xl text-white mb-2">
             +<span class="counter-value" data-target="300">0</span>
           </div>
-          <p class="text-white/70 font-medium text-base mb-2">Projetos e Usucapiões</p>
-          <p class="text-white/40 text-sm">Entregues com sucesso e aprovados pelos órgãos competentes</p>
+          <p class="text-white/70 font-medium text-base mb-2">Projetos Técnicos</p>
+          <p class="text-white/40 text-sm">Elaborados pela equipe desde 2015, entre clientes particulares, empresas e trabalhos pró-bono</p>
         </div>
 
         <!-- Metric 2 -->
         <div class="reveal-child text-center p-10 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-copper/30 transition-all duration-500">
           <div class="w-16 h-16 rounded-full bg-brand-copper/10 flex items-center justify-center mx-auto mb-6">
-            <i data-lucide="check-circle-2" class="w-7 h-7 text-brand-copper"></i>
+            <i data-lucide="calendar-check" class="w-7 h-7 text-brand-copper"></i>
           </div>
           <div class="font-heading font-extrabold text-5xl lg:text-6xl text-white mb-2">
-            <span class="counter-value" data-target="100">0</span>%
+            +<span class="counter-value" data-target="10">0</span>
           </div>
-          <p class="text-white/70 font-medium text-base mb-2">Aprovação Legal</p>
-          <p class="text-white/40 text-sm">Curadoria técnica de documentos com taxa integral de conformidade</p>
+          <p class="text-white/70 font-medium text-base mb-2">Anos de Experiência</p>
+          <p class="text-white/40 text-sm">Em regularização, licenciamento e projetos em Fortaleza e Região Metropolitana</p>
         </div>
 
         <!-- Metric 3 -->
@@ -656,7 +748,7 @@
               O <strong class="text-brand-navy">AEC Studio</strong> nasceu da premissa de que engenharia, arquitetura e legalização não podem ser tratadas como serviços isolados. Atuamos como um escritório integrado, onde cada solução é parte de um sistema projetado para proteger e valorizar o patrimônio dos nossos clientes.
             </p>
             <p>
-              Nosso modelo de atuação combina rigor técnico com agilidade operacional. Da análise documental inicial à entrega final do projeto, cada etapa é conduzida com metodologia própria de curadoria técnica, eliminando retrabalho e garantindo aprovação junto a cartórios, prefeituras e órgãos reguladores.
+              Nosso modelo de atuação combina rigor técnico com agilidade operacional. Da análise documental inicial à entrega final do projeto, cada etapa é conduzida com metodologia própria de curadoria técnica, para reduzir retrabalho e exigências junto a cartórios, prefeituras e órgãos reguladores.
             </p>
             <p>
               Contamos com corpo técnico próprio liderado por <strong class="text-brand-navy">Engenheiro Civil</strong> atuante no setor de incorporação e por <strong class="text-brand-navy">Arquiteto e Urbanista</strong>, garantindo conformidade com o CREA, CAU e órgãos municipais/cartorários.
@@ -676,7 +768,7 @@
               <i data-lucide="lock" class="w-5 h-5 text-brand-copper flex-shrink-0 mt-0.5"></i>
               <div>
                 <p class="font-semibold text-brand-navy text-sm">Segurança Jurídica</p>
-                <p class="text-xs text-gray-500 mt-1">Documentação blindada contra inconsistências</p>
+                <p class="text-xs text-gray-500 mt-1">Documentação revisada contra inconsistências</p>
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-gray-100">
@@ -690,7 +782,7 @@
               <i data-lucide="clock" class="w-5 h-5 text-brand-copper flex-shrink-0 mt-0.5"></i>
               <div>
                 <p class="font-semibold text-brand-navy text-sm">Agilidade</p>
-                <p class="text-xs text-gray-500 mt-1">Processos otimizados para prazos reduzidos</p>
+                <p class="text-xs text-gray-500 mt-1">Processo organizado e acompanhamento até o registro</p>
               </div>
             </div>
           </div>
@@ -850,7 +942,7 @@
               </button>
 
               <p class="text-center text-xs text-gray-400 mt-4">
-                Seus dados serão enviados diretamente para nosso WhatsApp comercial. Sem spam.
+                Seus dados vão direto para o nosso WhatsApp e são usados só para responder ao seu contato. Sem spam.
               </p>
             </form>
           </div>
@@ -1086,6 +1178,19 @@
       window.addEventListener('scroll', animateCounters, { passive: true });
       animateCounters();
 
+      // ─── Medição de contatos (Google Ads) ───
+      document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          window.aecTrackLead(this.getAttribute('data-lead') || 'whatsapp');
+        });
+      });
+
+      // ─── Pré-seleção do serviço via link (?servico=usucapiao) ───
+      if (/servico=usucapiao/i.test(window.location.search)) {
+        var servicoSelect = document.getElementById('servico');
+        if (servicoSelect) servicoSelect.value = 'Regularização / Usucapião';
+      }
+
       // ─── Form Tabs ───
       var tabBtns = document.querySelectorAll('.tab-btn');
       var tipoSolicitacao = document.getElementById('tipoSolicitacao');
@@ -1185,6 +1290,7 @@
         var encodedMessage = encodeURIComponent(message);
         var whatsappURL = 'https://wa.me/5585991274802?text=' + encodedMessage;
 
+        window.aecTrackLead('formulario');
         window.open(whatsappURL, '_blank');
 
         // Visual feedback
