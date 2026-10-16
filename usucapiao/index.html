@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usucapião em Fortaleza | Parte técnica com engenheiro e ART — AEC Studio</title>
+  <meta name="description" content="Usucapião e regularização de imóveis em Fortaleza e Região Metropolitana. Levantamento georreferenciado, planta, memorial descritivo com ART e envio ao ONR. Diagnóstico gratuito pelo WhatsApp." />
+  <link rel="canonical" href="https://aecstudio.xyz/usucapiao/" />
+  <meta name="theme-color" content="#0F172A" />
+
+  <!-- Google Ads: medição de contatos -->
+  <script>
+    window.AEC_ADS = { id: 'AW-11205778941', label: 'lu9FCLPuqJgdEP27qt8p' };
+    (function () {
+      var gs = document.createElement('script');
+      gs.async = true;
+      gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.AEC_ADS.id;
+      document.head.appendChild(gs);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', window.AEC_ADS.id);
+    })();
+    window.aecTrackLead = function (origem) {
+      if (window.gtag) {
+        gtag('event', 'conversion', { send_to: window.AEC_ADS.id + '/' + window.AEC_ADS.label, event_label: origem });
+      }
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #0F172A;
+      --navy-2: #1E293B;
+      --blue: #1E3A8A;
+      --copper: #B45309;
+      --copper-soft: #FEF3E7;
+      --green: #1FAF55;
+      --green-dark: #178A43;
+      --ink: #111827;
+      --muted: #4B5563;
+      --line: #E5E7EB;
+      --bg: #FFFFFF;
+      --bg-alt: #F8FAFC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 17px;
+      padding-bottom: 76px;
+    }
+    h1, h2, h3 { font-family: Montserrat, system-ui, sans-serif; line-height: 1.2; color: var(--navy); }
+    h1 { font-size: clamp(1.9rem, 5.2vw, 3rem); font-weight: 800; color: #fff; }
+    h2 { font-size: clamp(1.5rem, 3.6vw, 2.2rem); font-weight: 800; margin-bottom: 14px; }
+    h3 { font-size: 1.1rem; font-weight: 700; }
+    p { color: var(--muted); }
+    a { color: inherit; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 64px 0; }
+    .alt { background: var(--bg-alt); }
+    .eyebrow { display: inline-block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin-bottom: 10px; }
+    .center { text-align: center; }
+    .lead { font-size: 1.12rem; max-width: 720px; }
+    .center .lead { margin: 0 auto; }
+    svg.i { width: 22px; height: 22px; flex: 0 0 auto; }
+
+    /* Header */
+    .top { background: var(--navy); color: #fff; }
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand b { font-family: Montserrat, sans-serif; letter-spacing: 0.14em; font-size: 0.95rem; }
+    .brand small { display: block; font-size: 0.62rem; letter-spacing: 0.2em; opacity: 0.6; text-transform: uppercase; }
+    .top-cta { font-size: 0.9rem; font-weight: 700; text-decoration: none; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 8px 14px; border-radius: 10px; }
+
+    /* Hero */
+    .hero { background: linear-gradient(140deg, #0F172A 0%, #1E3A8A 100%); color: #fff; padding: 48px 0 56px; }
+    .hero .tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); padding: 6px 12px; border-radius: 999px; font-size: 0.82rem; margin-bottom: 18px; color: rgba(255,255,255,0.9); }
+    .hero .tag .dot { width: 8px; height: 8px; border-radius: 50%; background: #F59E0B; }
+    .hero p.sub { color: rgba(255,255,255,0.82); font-size: 1.15rem; margin: 16px 0 26px; max-width: 640px; }
+    .hero h1 span { color: #FBBF24; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-weight: 800; font-size: 1.05rem; text-decoration: none; padding: 16px 22px; border-radius: 14px; border: 0; cursor: pointer; font-family: inherit; }
+    .btn-wa { background: var(--green); color: #fff; box-shadow: 0 8px 24px rgba(31,175,85,0.35); }
+    .btn-wa:hover { background: var(--green-dark); }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.35); }
+    .btn-navy { background: var(--navy); color: #fff; }
+    .trust { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 26px; font-size: 0.92rem; color: rgba(255,255,255,0.75); }
+    .trust span { display: inline-flex; align-items: center; gap: 6px; }
+    .trust svg { width: 18px; height: 18px; color: #FBBF24; }
+
+    /* Pain */
+    .pain-grid { display: grid; gap: 14px; margin-top: 26px; }
+    .pain { display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+    .pain svg { color: #DC2626; margin-top: 3px; }
+    .pain b { color: var(--navy); }
+
+    /* Quiz */
+    .quiz { background: #fff; border: 2px solid var(--navy); border-radius: 20px; padding: 26px 22px; margin-top: 24px; box-shadow: 0 18px 40px rgba(15,23,42,0.08); }
+    .q { margin-bottom: 20px; }
+    .q > b { display: block; color: var(--navy); margin-bottom: 10px; font-size: 1.02rem; }
+    .opts { display: flex; flex-wrap: wrap; gap: 8px; }
+    .opt { border: 2px solid var(--line); background: #fff; border-radius: 12px; padding: 10px 14px; font-size: 0.95rem; cursor: pointer; font-family: inherit; color: var(--ink); }
+    .opt[aria-pressed="true"] { border-color: var(--navy); background: var(--navy); color: #fff; }
+    .q input[type=text] { width: 100%; border: 2px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 1rem; font-family: inherit; }
+    .q input[type=text]:focus { outline: none; border-color: var(--blue); }
+    .quiz .btn { width: 100%; margin-top: 6px; }
+    .quiz small { display: block; text-align: center; color: var(--muted); margin-top: 10px; font-size: 0.85rem; }
+    .quiz-err { display: none; color: #B91C1C; font-size: 0.92rem; margin-bottom: 8px; }
+
+    /* Steps / offer */
+    .steps { display: grid; gap: 16px; margin-top: 28px; }
+    .step { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 22px; position: relative; }
+    .step .n { width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-family: Montserrat, sans-serif; }
+    .step .price { display: inline-block; margin-top: 10px; font-weight: 800; color: var(--navy); background: var(--copper-soft); border: 1px solid #F5D0A9; border-radius: 8px; padding: 4px 10px; font-size: 0.95rem; }
+    .step .price.free { background: #ECFDF3; border-color: #ABEFC6; color: #067647; }
+    .offer { margin-top: 28px; background: var(--navy); color: #fff; border-radius: 20px; padding: 28px 22px; }
+    .offer h3 { color: #fff; font-size: 1.35rem; margin-bottom: 8px; }
+    .offer p { color: rgba(255,255,255,0.8); }
+    .offer ul { list-style: none; margin: 18px 0; display: grid; gap: 10px; }
+    .offer li { display: flex; gap: 10px; align-items: flex-start; color: rgba(255,255,255,0.92); }
+    .offer li svg { color: #34D399; margin-top: 2px; }
+    .scarcity { display: inline-flex; align-items: center; gap: 8px; background: rgba(251,191,36,0.15); color: #FCD34D; border: 1px solid rgba(251,191,36,0.35); padding: 6px 12px; border-radius: 999px; font-size: 0.88rem; font-weight: 700; margin-bottom: 14px; }
+
+    /* Included */
+    .incl { display: grid; gap: 12px; margin-top: 24px; }
+    .incl div { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .incl svg { color: var(--copper); margin-top: 2px; }
+    .note { margin-top: 16px; font-size: 0.92rem; background: var(--copper-soft); border-left: 4px solid var(--copper); padding: 12px 14px; border-radius: 8px; color: #78350F; }
+
+    /* Who */
+    .who { display: grid; gap: 12px; margin-top: 22px; }
+    .who div { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+    .who b { color: var(--navy); display: block; margin-bottom: 4px; }
+
+    /* Testimonials (só aparecem quando houver depoimentos reais) */
+    #depoimentos { display: none; }
+    body.previa #depoimentos, #depoimentos[data-pronto="true"] { display: block; }
+    .tst-grid { display: grid; gap: 16px; margin-top: 24px; }
+    .tst { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+    .tst.placeholder { border: 2px dashed #F59E0B; background: #FFFBEB; }
+    .tst q { display: block; color: var(--ink); font-style: italic; margin-bottom: 12px; }
+    .tst b { color: var(--navy); }
+
+    /* FAQ */
+    .faq { margin-top: 24px; display: grid; gap: 10px; }
+    details { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 4px 18px; }
+    summary { cursor: pointer; list-style: none; padding: 14px 0; font-weight: 700; color: var(--navy); display: flex; justify-content: space-between; gap: 12px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--copper); }
+    details[open] summary::after { content: "−"; }
+    details p { padding-bottom: 16px; }
+
+    /* Final CTA */
+    .final { background: linear-gradient(140deg, #0F172A 0%, #1E3A8A 100%); color: #fff; }
+    .final h2 { color: #fff; }
+    .final p { color: rgba(255,255,255,0.8); margin-bottom: 24px; }
+
+    footer { background: #0B1222; color: rgba(255,255,255,0.55); font-size: 0.88rem; padding: 28px 0 36px; }
+    footer a { color: rgba(255,255,255,0.75); }
+
+    /* Sticky mobile bar */
+    .sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: rgba(255,255,255,0.97); border-top: 1px solid var(--line); padding: 10px 14px; box-shadow: 0 -8px 24px rgba(15,23,42,0.08); }
+    .sticky .btn { width: 100%; padding: 14px; }
+
+    @media (max-width: 480px) {
+      .brand small { display: none; }
+      .brand b { font-size: 0.85rem; }
+      .top-cta { font-size: 0.8rem; padding: 7px 10px; }
+      .hero p.sub { font-size: 1.02rem; }
+    }
+    @media (min-width: 760px) {
+      body { padding-bottom: 0; }
+      .sticky { display: none; }
+      .pain-grid, .who { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: repeat(3, 1fr); }
+      .incl { grid-template-columns: 1fr 1fr; }
+      .tst-grid { grid-template-columns: repeat(3, 1fr); }
+      .hero { padding: 72px 0 80px; }
+      .quiz { padding: 32px; }
+      .offer { padding: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SVG icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.458-1.495A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm5.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M18 6L6 18M6 6l12 12"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zM14 2v6h6M9 14l2 2 4-4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 7v5l3 2"/></symbol>
+  </svg>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true"><polygon points="24,2 44,14 44,34 24,46 4,34 4,14" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.8"/><line x1="24" y1="14" x2="19" y2="28" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><line x1="24" y1="14" x2="29" y2="28" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><line x1="19" y1="28" x2="29" y2="28" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><line x1="24" y1="18" x2="24" y2="26" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/></svg>
+        <span><b>AEC STUDIO</b><small>Engenharia &amp; Legalização</small></span>
+      </a>
+      <a class="top-cta" href="#diagnostico">Diagnóstico grátis</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="tag"><span class="dot"></span> Fortaleza e Região Metropolitana</div>
+      <h1>Usucapião em Fortaleza: transforme a posse do seu imóvel em <span>escritura registrada</span></h1>
+      <p class="sub">Engenheiro civil com ART cuida de toda a parte técnica: levantamento georreferenciado, planta, memorial descritivo e envio ao ONR, com acompanhamento até o registro no cartório.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" href="#diagnostico">
+          <svg class="i"><use href="#i-check"/></svg> Ver se meu caso cabe usucapião
+        </a>
+        <a class="btn btn-ghost" data-lead="hero_whatsapp" href="https://wa.me/5585991274802?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20de%20usucapi%C3%A3o%20e%20quero%20um%20diagn%C3%B3stico%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener">
+          <svg class="i"><use href="#i-wa"/></svg> Falar no WhatsApp
+        </a>
+      </div>
+      <div class="trust">
+        <span><svg><use href="#i-shield"/></svg> Engenheiro civil CREA-CE</span>
+        <span><svg><use href="#i-doc"/></svg> ART em todos os projetos</span>
+        <span><svg><use href="#i-check"/></svg> +300 projetos desde 2015</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOR -->
+  <section class="alt">
+    <div class="wrap">
+      <span class="eyebrow">O problema</span>
+      <h2>Imóvel sem escritura registrada é patrimônio pela metade</h2>
+      <p class="lead">Contrato de gaveta, herança sem inventário, terreno comprado só com recibo. Enquanto o imóvel não está no seu nome no cartório:</p>
+      <div class="pain-grid">
+        <div class="pain"><svg class="i"><use href="#i-x"/></svg><div><b>Vender fica difícil</b> e o comprador pede desconto pela insegurança.</div></div>
+        <div class="pain"><svg class="i"><use href="#i-x"/></svg><div><b>Sem financiamento:</b> banco não aceita imóvel sem matrícula como garantia.</div></div>
+        <div class="pain"><svg class="i"><use href="#i-x"/></svg><div><b>A herança complica:</b> os filhos herdam o problema junto com o imóvel.</div></div>
+        <div class="pain"><svg class="i"><use href="#i-x"/></svg><div><b>Risco de disputa</b> com antigos donos, herdeiros ou vizinhos.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="diagnostico">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Diagnóstico gratuito</span>
+        <h2>Responda 4 perguntas e veja se o seu caso cabe usucapião</h2>
+        <p class="lead">Leva 30 segundos. As respostas vão direto para o nosso WhatsApp e você recebe uma orientação inicial sem custo.</p>
+      </div>
+
+      <form class="quiz" id="quiz" novalidate>
+        <div class="q" data-q="tipo">
+          <b>1. Que tipo de imóvel é?</b>
+          <div class="opts">
+            <button type="button" class="opt" aria-pressed="false">Casa</button>
+            <button type="button" class="opt" aria-pressed="false">Terreno</button>
+            <button type="button" class="opt" aria-pressed="false">Ponto comercial</button>
+            <button type="button" class="opt" aria-pressed="false">Apartamento</button>
+          </div>
+        </div>
+        <div class="q" data-q="tempo">
+          <b>2. Há quanto tempo você (ou sua família) está no imóvel?</b>
+          <div class="opts">
+            <button type="button" class="opt" aria-pressed="false">Menos de 5 anos</button>
+            <button type="button" class="opt" aria-pressed="false">De 5 a 10 anos</button>
+            <button type="button" class="opt" aria-pressed="false">De 10 a 15 anos</button>
+            <button type="button" class="opt" aria-pressed="false">Mais de 15 anos</button>
+          </div>
+        </div>
+        <div class="q" data-q="documento">
+          <b>3. Que documento você tem hoje?</b>
+          <div class="opts">
+            <button type="button" class="opt" aria-pressed="false">Contrato de compra (gaveta)</button>
+            <button type="button" class="opt" aria-pressed="false">Recibo</button>
+            <button type="button" class="opt" aria-pressed="false">Imóvel de herança</button>
+            <button type="button" class="opt" aria-pressed="false">Nenhum documento</button>
+          </div>
+        </div>
+        <div class="q" data-q="bairro">
+          <b>4. Bairro e cidade do imóvel</b>
+          <input type="text" id="bairro" placeholder="Ex.: Messejana, Fortaleza" autocomplete="address-level2" />
+        </div>
+        <p class="quiz-err" id="quizErr">Responda as 4 perguntas para enviarmos o seu diagnóstico.</p>
+        <button type="submit" class="btn btn-wa"><svg class="i"><use href="#i-wa"/></svg> Enviar e receber meu diagnóstico</button>
+        <small>Seus dados vão direto para o nosso WhatsApp e são usados só para responder ao seu contato.</small>
+      </form>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="alt" id="como-funciona">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Três passos até o imóvel no seu nome</h2>
+        <p class="lead">Você só investe quando já sabe que o seu caso tem caminho.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <h3>Diagnóstico pelo WhatsApp</h3>
+          <p>Você envia as respostas e os documentos que tiver. Dizemos se o caso cabe usucapião e qual o próximo passo.</p>
+          <span class="price free">Gratuito</span>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <h3>Visita técnica ao imóvel</h3>
+          <p>O engenheiro vai até o local, confere limites, construção e vizinhos, e você recebe a proposta por escrito.</p>
+          <span class="price">R$ 97, abatidos do projeto</span>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <h3>Projeto técnico até o registro</h3>
+          <p>Levantamento, planta, memorial, ART e envio ao ONR. Acompanhamos as exigências técnicas do cartório.</p>
+          <span class="price">Pagamento por etapa</span>
+        </div>
+      </div>
+
+      <div class="offer">
+        <div class="scarcity"><svg class="i" style="width:16px;height:16px"><use href="#i-clock"/></svg> Agenda limitada: poucas visitas por semana</div>
+        <h3>Visita técnica por R$ 97, e esse valor volta para você</h3>
+        <p>Fechando o projeto, os R$ 97 da visita são descontados integralmente do valor final.</p>
+        <ul>
+          <li><svg class="i"><use href="#i-check"/></svg> Engenheiro civil com registro no CREA-CE vai pessoalmente ao imóvel</li>
+          <li><svg class="i"><use href="#i-check"/></svg> Proposta com escopo, prazo e valor por escrito</li>
+          <li><svg class="i"><use href="#i-check"/></svg> Orientação sobre documentos e sobre o papel do advogado</li>
+          <li><svg class="i"><use href="#i-check"/></svg> Valor 100% abatido se você contratar o projeto</li>
+        </ul>
+        <a class="btn btn-wa" data-lead="oferta_visita" href="https://wa.me/5585991274802?text=Ol%C3%A1%2C%20quero%20agendar%20a%20visita%20t%C3%A9cnica%20de%20usucapi%C3%A3o." target="_blank" rel="noopener">
+          <svg class="i"><use href="#i-wa"/></svg> Quero agendar minha visita
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INCLUÍDO -->
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">O que está incluído no projeto</span>
+      <h2>Toda a parte técnica que o cartório exige</h2>
+      <div class="incl">
+        <div><svg class="i"><use href="#i-check"/></svg><span>Levantamento georreferenciado do imóvel (SIRGAS 2000)</span></div>
+        <div><svg class="i"><use href="#i-check"/></svg><span>Planta e memorial descritivo com ART de engenheiro civil</span></div>
+        <div><svg class="i"><use href="#i-check"/></svg><span>Levantamento da construção, quando houver, para a matrícula já sair com ela</span></div>
+        <div><svg class="i"><use href="#i-check"/></svg><span>Envio do polígono ao Mapa do Registro de Imóveis (ONR)</span></div>
+        <div><svg class="i"><use href="#i-check"/></svg><span>Acompanhamento das exigências técnicas do cartório</span></div>
+        <div><svg class="i"><use href="#i-check"/></svg><span>Contrato com escopo, prazo e pagamento por etapa</span></div>
+      </div>
+      <p class="note">Nosso escopo é exclusivamente técnico. O requerimento e a ata notarial são feitos por advogado, como exige a lei, e a coleta das assinaturas dos vizinhos fica com o contratante ou seu advogado. Indicamos parceiros ou trabalhamos com o seu.</p>
+    </div>
+  </section>
+
+  <!-- PARA QUEM -->
+  <section class="alt">
+    <div class="wrap">
+      <span class="eyebrow">Para quem é</span>
+      <h2>Casos que atendemos</h2>
+      <div class="who">
+        <div><b>Casa ou terreno comprado com contrato de gaveta</b>O vendedor sumiu ou não pode passar a escritura.</div>
+        <div><b>Imóvel de herança sem inventário</b>A família mora há anos, mas o imóvel ainda está no nome de quem faleceu.</div>
+        <div><b>Terreno sem matrícula</b>Nunca houve registro em cartório, só recibos e IPTU.</div>
+        <div><b>Área diferente da matrícula</b>Quando o caso é de retificação de área, fazemos a parte técnica também.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS (exibir só com depoimentos reais e autorizados) -->
+  <section id="depoimentos" data-pronto="false">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Depoimentos</span>
+        <h2>Quem já regularizou com a gente</h2>
+      </div>
+      <div class="tst-grid">
+        <div class="tst placeholder"><q>Espaço para depoimento real de cliente, com autorização por escrito.</q><b>Nome do cliente</b><br /><small>Bairro • tipo de caso</small></div>
+        <div class="tst placeholder"><q>Espaço para depoimento real de cliente, com autorização por escrito.</q><b>Nome do cliente</b><br /><small>Bairro • tipo de caso</small></div>
+        <div class="tst placeholder"><q>Espaço para depoimento real de cliente, com autorização por escrito.</q><b>Nome do cliente</b><br /><small>Bairro • tipo de caso</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt" id="duvidas">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2>Antes de chamar no WhatsApp</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Quanto tempo de posse eu preciso ter?</summary>
+          <p>Depende da modalidade. Na usucapião extraordinária são 15 anos, ou 10 se você mora ou fez obras no imóvel. Na ordinária, com contrato ou documento de compra, são 10 anos, ou 5 em alguns casos. Na especial urbana, para imóvel de até 250 m² usado como moradia, por quem não tem outro imóvel, são 5 anos. No diagnóstico indicamos qual se aplica.</p>
+        </details>
+        <details>
+          <summary>Quanto custa?</summary>
+          <p>O diagnóstico pelo WhatsApp é gratuito. A visita técnica custa R$ 97, abatidos integralmente se você contratar o projeto. O projeto técnico é orçado depois da visita, conforme área, construção e complexidade, com pagamento por etapa. Custas de cartório e honorários do advogado são à parte.</p>
+        </details>
+        <details>
+          <summary>Preciso de advogado?</summary>
+          <p>Sim. A lei exige advogado para o requerimento da usucapião extrajudicial. Nós cuidamos da parte técnica e trabalhamos junto com o seu advogado ou indicamos parceiros.</p>
+        </details>
+        <details>
+          <summary>Quanto tempo leva até o registro?</summary>
+          <p>A parte técnica costuma ficar pronta em poucas semanas depois da visita. O prazo total depende do cartório, das notificações aos vizinhos e de eventuais exigências. Na proposta informamos o prazo da nossa etapa.</p>
+        </details>
+        <details>
+          <summary>Que documentos devo separar?</summary>
+          <p>O que você tiver: contrato ou recibo de compra, carnês de IPTU, contas de água e luz no seu nome, matrícula do imóvel (se existir) e fotos. Mesmo sem documento nenhum, vale fazer o diagnóstico.</p>
+        </details>
+        <details>
+          <summary>E se o meu caso não couber usucapião?</summary>
+          <p>Dizemos isso no diagnóstico, antes de você pagar qualquer coisa. Muitas vezes o caminho é outro, como retificação de área, inventário ou regularização fundiária, e orientamos qual procurar.</p>
+        </details>
+        <details>
+          <summary>Onde vocês atendem?</summary>
+          <p>Fortaleza, Eusébio, Aquiraz, Caucaia, Maracanaú e demais cidades da Região Metropolitana.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final">
+    <div class="wrap center">
+      <h2>Seu imóvel no seu nome, com segurança</h2>
+      <p class="lead">Comece pelo diagnóstico gratuito. Em poucos minutos você sabe se o seu caso tem caminho.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn-wa" href="#diagnostico"><svg class="i"><use href="#i-check"/></svg> Fazer meu diagnóstico grátis</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p><b style="color:#fff">AEC Studio</b> — Engenharia, Arquitetura e Legalização Imobiliária. Projetos executados por profissionais habilitados no CREA-CE e CAU-CE.</p>
+      <p style="margin-top:8px">WhatsApp: <a data-lead="rodape_whatsapp" href="https://wa.me/5585991274802" target="_blank" rel="noopener">(85) 99127-4802</a> · E-mail: <a href="mailto:empresa.aecstudio@gmail.com">empresa.aecstudio@gmail.com</a> · <a href="/">Site principal</a></p>
+    </div>
+  </footer>
+
+  <!-- Barra fixa no celular -->
+  <div class="sticky">
+    <a class="btn btn-wa" data-lead="barra_fixa" href="https://wa.me/5585991274802?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20de%20usucapi%C3%A3o%20e%20quero%20um%20diagn%C3%B3stico%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener">
+      <svg class="i"><use href="#i-wa"/></svg> Diagnóstico grátis no WhatsApp
+    </a>
+  </div>
+
+  <script>
+    (function () {
+      if (/[?&]previa=1/.test(location.search)) document.body.classList.add('previa');
+
+      // Medição: todo clique em link do WhatsApp conta como contato
+      document.querySelectorAll('a[href*="wa.me"]').forEach(function (a) {
+        a.addEventListener('click', function () { window.aecTrackLead(a.getAttribute('data-lead') || 'whatsapp'); });
+      });
+
+      // Quiz: um clique por pergunta
+      var answers = {};
+      document.querySelectorAll('.q[data-q] .opts').forEach(function (group) {
+        var key = group.parentElement.getAttribute('data-q');
+        group.querySelectorAll('.opt').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            group.querySelectorAll('.opt').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+            btn.setAttribute('aria-pressed', 'true');
+            answers[key] = btn.textContent.trim();
+          });
+        });
+      });
+
+      document.getElementById('quiz').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var bairro = document.getElementById('bairro').value.trim();
+        var err = document.getElementById('quizErr');
+        if (!answers.tipo || !answers.tempo || !answers.documento || !bairro) {
+          err.style.display = 'block';
+          return;
+        }
+        err.style.display = 'none';
+        var msg = 'Olá, vim pela página de usucapião e quero meu diagnóstico gratuito.\n\n' +
+          '- *Imóvel:* ' + answers.tipo + '\n' +
+          '- *Tempo no imóvel:* ' + answers.tempo + '\n' +
+          '- *Documento:* ' + answers.documento + '\n' +
+          '- *Local:* ' + bairro;
+        window.aecTrackLead('quiz_diagnostico');
+        window.open('https://wa.me/5585991274802?text=' + encodeURIComponent(msg), '_blank');
+      });
+    })();
+  </script>
+</body>
+</html>
