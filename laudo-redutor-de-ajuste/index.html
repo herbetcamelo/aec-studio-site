@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laudo de Avaliação para o Redutor de Ajuste (IBS/CBS) — AEC Studio</title>
+  <meta name="description" content="Laudo de avaliação de terrenos, glebas e imóveis pela NBR 14653, com ART e data-base 31/12/2026, para o redutor de ajuste do IBS e da CBS. Para incorporadoras, loteadoras, holdings e empresas com imóveis no Ceará." />
+  <link rel="canonical" href="https://aecstudio.xyz/laudo-redutor-de-ajuste/" />
+  <meta name="theme-color" content="#0F172A" />
+
+  <!-- Google Ads: medição de contatos -->
+  <script>
+    window.AEC_ADS = { id: 'AW-11205778941', label: 'lu9FCLPuqJgdEP27qt8p' };
+    (function () {
+      var gs = document.createElement('script');
+      gs.async = true;
+      gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.AEC_ADS.id;
+      document.head.appendChild(gs);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', window.AEC_ADS.id);
+    })();
+    window.aecTrackLead = function (origem) {
+      if (window.gtag) {
+        gtag('event', 'conversion', { send_to: window.AEC_ADS.id + '/' + window.AEC_ADS.label, event_label: origem });
+      }
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #0F172A;
+      --blue: #1E3A8A;
+      --copper: #B45309;
+      --copper-soft: #FEF3E7;
+      --green: #1FAF55;
+      --green-dark: #178A43;
+      --ink: #111827;
+      --muted: #4B5563;
+      --line: #E5E7EB;
+      --bg: #FFFFFF;
+      --bg-alt: #F8FAFC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; font-size: 17px; padding-bottom: 76px; }
+    h1, h2, h3 { font-family: Montserrat, system-ui, sans-serif; line-height: 1.2; color: var(--navy); text-wrap: balance; }
+    h1 { font-size: clamp(1.85rem, 5vw, 2.9rem); font-weight: 800; color: #fff; }
+    h2 { font-size: clamp(1.45rem, 3.5vw, 2.1rem); font-weight: 800; margin-bottom: 14px; }
+    h3 { font-size: 1.1rem; font-weight: 700; }
+    p { color: var(--muted); }
+    a { color: inherit; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 64px 0; }
+    .alt { background: var(--bg-alt); }
+    .eyebrow { display: inline-block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin-bottom: 10px; }
+    .center { text-align: center; }
+    .lead { font-size: 1.12rem; max-width: 720px; }
+    .center .lead { margin: 0 auto; }
+    svg.i { width: 22px; height: 22px; flex: 0 0 auto; }
+
+    .top { background: var(--navy); color: #fff; }
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand b { font-family: Montserrat, sans-serif; letter-spacing: 0.14em; font-size: 0.95rem; }
+    .brand small { display: block; font-size: 0.62rem; letter-spacing: 0.2em; opacity: 0.6; text-transform: uppercase; }
+    .top-cta { font-size: 0.9rem; font-weight: 700; text-decoration: none; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 8px 14px; border-radius: 10px; }
+
+    .hero { background: linear-gradient(140deg, #0F172A 0%, #1E3A8A 100%); color: #fff; padding: 48px 0 56px; }
+    .hero .tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); padding: 6px 12px; border-radius: 999px; font-size: 0.82rem; margin-bottom: 18px; color: rgba(255,255,255,0.9); }
+    .hero .tag .dot { width: 8px; height: 8px; border-radius: 50%; background: #F59E0B; }
+    .hero p.sub { color: rgba(255,255,255,0.82); font-size: 1.12rem; margin: 16px 0 26px; max-width: 660px; }
+    .hero h1 span { color: #FBBF24; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-weight: 800; font-size: 1.05rem; text-decoration: none; padding: 16px 22px; border-radius: 14px; border: 0; cursor: pointer; font-family: inherit; }
+    .btn-wa { background: var(--green); color: #fff; box-shadow: 0 8px 24px rgba(31,175,85,0.35); }
+    .btn-wa:hover { background: var(--green-dark); }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.35); }
+    .btn:focus-visible, .opt:focus-visible, input:focus-visible { outline: 3px solid #FBBF24; outline-offset: 2px; }
+    .trust { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 26px; font-size: 0.92rem; color: rgba(255,255,255,0.75); }
+    .trust span { display: inline-flex; align-items: center; gap: 6px; }
+    .trust svg { width: 18px; height: 18px; color: #FBBF24; }
+
+    /* Linha do tempo da lei */
+    .timeline { display: grid; gap: 14px; margin-top: 26px; }
+    .tl { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+    .tl .d { font-family: Montserrat, sans-serif; font-weight: 800; color: var(--copper); font-size: 1.05rem; margin-bottom: 6px; display: block; }
+    .tl b { color: var(--navy); }
+
+    /* Opções do art. 258 */
+    .opts-grid { display: grid; gap: 14px; margin-top: 24px; }
+    .op { border: 1px solid var(--line); border-radius: 14px; padding: 18px; background: #fff; }
+    .op .k { display: inline-block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .op.hl { border: 2px solid var(--navy); }
+    .op.hl .k { color: var(--copper); }
+
+    /* Calculadora */
+    .calc { background: #fff; border: 2px solid var(--navy); border-radius: 20px; padding: 26px 22px; margin-top: 24px; box-shadow: 0 18px 40px rgba(15,23,42,0.08); }
+    .calc label { display: block; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .calc .row { display: grid; gap: 16px; }
+    .calc input { width: 100%; border: 2px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 1rem; font-family: inherit; font-variant-numeric: tabular-nums; }
+    .calc input:focus { outline: none; border-color: var(--blue); }
+    .calc .hint { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+    .res { margin-top: 20px; border-radius: 14px; background: var(--bg-alt); border: 1px solid var(--line); padding: 18px; display: grid; gap: 8px; }
+    .res div { display: flex; justify-content: space-between; gap: 12px; font-variant-numeric: tabular-nums; }
+    .res div span:first-child { color: var(--muted); }
+    .res .big { border-top: 1px solid var(--line); padding-top: 10px; font-weight: 800; color: var(--navy); font-size: 1.1rem; }
+    .verdict { margin-top: 14px; font-weight: 700; padding: 12px 14px; border-radius: 10px; }
+    .verdict.yes { background: #ECFDF3; color: #067647; border: 1px solid #ABEFC6; }
+    .verdict.maybe { background: var(--copper-soft); color: #78350F; border: 1px solid #F5D0A9; }
+    .verdict.no { background: #F1F5F9; color: var(--navy); border: 1px solid var(--line); }
+    .calc .btn { width: 100%; margin-top: 16px; }
+    .calc small.n { display: block; margin-top: 10px; font-size: 0.82rem; color: var(--muted); }
+
+    /* Steps */
+    .steps { display: grid; gap: 16px; margin-top: 28px; }
+    .step { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+    .step .n { width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-family: Montserrat, sans-serif; }
+    .step .when { display: inline-block; margin-top: 10px; font-weight: 800; color: var(--navy); background: var(--copper-soft); border: 1px solid #F5D0A9; border-radius: 8px; padding: 4px 10px; font-size: 0.9rem; }
+
+    .incl { display: grid; gap: 12px; margin-top: 24px; }
+    .incl div { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .incl svg { color: var(--copper); margin-top: 2px; }
+    .note { margin-top: 16px; font-size: 0.92rem; background: var(--copper-soft); border-left: 4px solid var(--copper); padding: 12px 14px; border-radius: 8px; color: #78350F; }
+
+    .who { display: grid; gap: 12px; margin-top: 22px; }
+    .who div { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+    .who b { color: var(--navy); display: block; margin-bottom: 4px; }
+
+    .faq { margin-top: 24px; display: grid; gap: 10px; }
+    details { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 4px 18px; }
+    summary { cursor: pointer; list-style: none; padding: 14px 0; font-weight: 700; color: var(--navy); display: flex; justify-content: space-between; gap: 12px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--copper); }
+    details[open] summary::after { content: "−"; }
+    details p { padding-bottom: 16px; }
+
+    .final { background: linear-gradient(140deg, #0F172A 0%, #1E3A8A 100%); color: #fff; }
+    .final h2 { color: #fff; }
+    .final p { color: rgba(255,255,255,0.8); margin-bottom: 24px; }
+
+    .src { font-size: 0.85rem; margin-top: 18px; }
+    .src a { color: var(--blue); }
+
+    footer { background: #0B1222; color: rgba(255,255,255,0.55); font-size: 0.88rem; padding: 28px 0 36px; }
+    footer a { color: rgba(255,255,255,0.75); }
+
+    .sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: rgba(255,255,255,0.97); border-top: 1px solid var(--line); padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px)); box-shadow: 0 -8px 24px rgba(15,23,42,0.08); }
+    .sticky .btn { width: 100%; padding: 14px; }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media (max-width: 480px) {
+      .brand small { display: none; }
+      .brand b { font-size: 0.85rem; }
+      .top-cta { font-size: 0.8rem; padding: 7px 10px; }
+      .hero p.sub { font-size: 1.02rem; }
+    }
+    @media (min-width: 760px) {
+      body { padding-bottom: 0; }
+      .sticky { display: none; }
+      .timeline { grid-template-columns: repeat(3, 1fr); }
+      .opts-grid { grid-template-columns: repeat(3, 1fr); }
+      .who, .incl { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: repeat(3, 1fr); }
+      .calc .row { grid-template-columns: repeat(3, 1fr); }
+      .hero { padding: 72px 0 80px; }
+      .calc { padding: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.458-1.495A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm5.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zM14 2v6h6M9 14l2 2 4-4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 7v5l3 2"/></symbol>
+  </svg>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true"><polygon points="24,2 44,14 44,34 24,46 4,34 4,14" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.8"/><line x1="24" y1="14" x2="19" y2="28" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><line x1="24" y1="14" x2="29" y2="28" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><line x1="19" y1="28" x2="29" y2="28" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><line x1="24" y1="18" x2="24" y2="26" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/></svg>
+        <span><b>AEC STUDIO</b><small>Engenharia &amp; Avaliações</small></span>
+      </a>
+      <a class="top-cta" href="#calculadora">Simular agora</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="tag"><span class="dot"></span> Data-base: 31/12/2026</div>
+      <h1>Seus terrenos valem mais do que o custo corrigido? <span>Comprove antes de 2027.</span></h1>
+      <p class="sub">A partir de 2027, a venda de imóveis por empresas paga IBS e CBS. O redutor de ajuste diminui esse imposto, e o valor dele é fixado em 31/12/2026. Um laudo de avaliação pela NBR 14653, com ART, documenta o valor de mercado de cada imóvel nessa data.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" data-lead="hero_whatsapp" href="https://wa.me/5585991274802?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20redutor%20de%20ajuste%20e%20quero%20avaliar%20os%20im%C3%B3veis%20da%20minha%20empresa." target="_blank" rel="noopener">
+          <svg class="i"><use href="#i-wa"/></svg> Avaliar meus imóveis
+        </a>
+        <a class="btn btn-ghost" href="#calculadora"><svg class="i"><use href="#i-check"/></svg> Ver se o laudo compensa</a>
+      </div>
+      <div class="trust">
+        <span><svg><use href="#i-shield"/></svg> Engenheiro civil CREA-CE</span>
+        <span><svg><use href="#i-doc"/></svg> ABNT NBR 14653 e ART</span>
+        <span><svg><use href="#i-check"/></svg> Formação em valuation (USP/ESALQ)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE MUDA -->
+  <section class="alt">
+    <div class="wrap">
+      <span class="eyebrow">O que muda</span>
+      <h2>Três datas que definem quanto imposto sua empresa vai pagar</h2>
+      <div class="timeline">
+        <div class="tl"><span class="d">31/12/2026</span><b>O valor inicial do redutor é fixado</b> para cada imóvel que a empresa tem (LC 214/2025, art. 258).</div>
+        <div class="tl"><span class="d">1º/01/2027</span><b>O redutor passa a acompanhar o imóvel</b>, corrigido pelo IPCA até a venda.</div>
+        <div class="tl"><span class="d">Na venda</span><b>O IBS e a CBS incidem sobre o valor da venda menos o redutor.</b> Redutor baixo significa base maior e mais imposto.</div>
+      </div>
+
+      <h3 style="margin-top:40px">Como o valor inicial pode ser definido</h3>
+      <div class="opts-grid">
+        <div class="op"><span class="k">Regra geral</span><p><b style="color:var(--navy)">Custo de aquisição corrigido pelo IPCA.</b> Para terrenos comprados há anos em regiões que cresceram, costuma ficar bem abaixo do mercado.</p></div>
+        <div class="op"><span class="k">Por opção</span><p><b style="color:var(--navy)">Valor de referência do fisco.</b> Pode ser contestado com laudo quando ficar abaixo do mercado.</p></div>
+        <div class="op hl"><span class="k">Onde o laudo entra</span><p><b style="color:var(--navy)">Estimativa de valor de mercado</b>, quando o valor de referência não estiver disponível. O laudo com data-base 31/12/2026 é a prova desse valor.</p></div>
+      </div>
+      <p class="src">Base legal: <a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm" target="_blank" rel="noopener">LC 214/2025</a>, arts. 257 e 258; <a href="https://www2.camara.leg.br/legin/fed/decret/2026/decreto-12955-29-abril-2026-799019-normaatualizada-pe.html" target="_blank" rel="noopener">Decreto 12.955/2026</a>, arts. 366, 367 e 375.</p>
+    </div>
+  </section>
+
+  <!-- CALCULADORA -->
+  <section id="calculadora">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Simulação gratuita</span>
+        <h2>O laudo compensa para o seu imóvel?</h2>
+        <p class="lead">Informe o ano de compra, o valor pago e quanto o imóvel vale hoje, na sua estimativa. A conta mostra a diferença entre o mercado e o custo corrigido pelo IPCA.</p>
+      </div>
+
+      <form class="calc" id="calc" novalidate>
+        <div class="row">
+          <div>
+            <label for="ano">Ano de compra</label>
+            <input id="ano" type="number" inputmode="numeric" min="1995" max="2026" value="2012" />
+            <p class="hint">De 1995 a 2026</p>
+          </div>
+          <div>
+            <label for="pago">Valor pago (R$)</label>
+            <input id="pago" type="text" inputmode="decimal" value="1.500.000" />
+            <p class="hint">Inclua ITBI e laudêmio, se houver</p>
+          </div>
+          <div>
+            <label for="mercado">Valor de mercado hoje (R$)</label>
+            <input id="mercado" type="text" inputmode="decimal" value="6.000.000" />
+            <p class="hint">Sua estimativa, sem laudo</p>
+          </div>
+        </div>
+
+        <div class="res" aria-live="polite">
+          <div><span>Fator IPCA acumulado</span><span id="rFator">–</span></div>
+          <div><span>Custo corrigido pelo IPCA</span><span id="rCusto">–</span></div>
+          <div><span>Valor de mercado estimado</span><span id="rMerc">–</span></div>
+          <div class="big"><span>Diferença que um laudo pode documentar</span><span id="rDif">–</span></div>
+        </div>
+        <p class="verdict" id="verdict" hidden></p>
+
+        <button type="submit" class="btn btn-wa"><svg class="i"><use href="#i-wa"/></svg> Enviar a simulação e pedir orçamento</button>
+        <small class="n">Simulação aproximada: corrige pelo IPCA de junho do ano de compra até o último mês publicado. Não é laudo nem parecer tributário.</small>
+      </form>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="alt" id="como-funciona">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Da lista de imóveis ao laudo com ART</h2>
+        <p class="lead">Você só contrata laudo para os imóveis em que ele faz diferença.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <h3>Triagem da carteira</h3>
+          <p>Com a lista de imóveis, data e valor de compra, calculo o custo corrigido de cada um, comparo com o mercado e indico onde o laudo compensa.</p>
+          <span class="when">Em até 3 dias úteis</span>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <h3>Vistoria em dezembro</h3>
+          <p>Visita a cada imóvel selecionado, com relatório fotográfico, perto da data-base de 31/12/2026.</p>
+          <span class="when">Até 30/12/2026</span>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <h3>Laudo com ART</h3>
+          <p>Avaliação pela NBR 14653, com pesquisa de mercado documentada, grau de fundamentação declarado e data-base 31/12/2026.</p>
+          <span class="when">Janeiro de 2027</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INCLUÍDO -->
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">O que está incluído</span>
+      <h2>Um laudo feito para ser questionado e se sustentar</h2>
+      <div class="incl">
+        <div><svg class="i"><use href="#i-check"/></svg><span>Método comparativo de dados de mercado, com fontes identificadas e mapa das amostras</span></div>
+        <div><svg class="i"><use href="#i-check"/></svg><span>Método involutivo para glebas sem comparáveis, com projeto hipotético de parcelamento</span></div>
+        <div><svg class="i"><use href="#i-check"/></svg><span>Grau de fundamentação e de precisão declarados, conforme a NBR 14653-2</span></div>
+        <div><svg class="i"><use href="#i-check"/></svg><span>Comparação com o custo de aquisição corrigido pelo IPCA</span></div>
+        <div><svg class="i"><use href="#i-check"/></svg><span>Rateio do valor por lote, quando a área for parcelada (Decreto 12.955/2026, art. 373)</span></div>
+        <div><svg class="i"><use href="#i-check"/></svg><span>ART registrada no CREA-CE em cada laudo</span></div>
+      </div>
+      <p class="note">O laudo informa o valor de mercado. A escolha entre custo corrigido, valor de referência ou estimativa de mercado, e o regime tributário, são decisões da empresa com o seu contador. Trabalhamos junto com ele.</p>
+    </div>
+  </section>
+
+  <!-- PARA QUEM -->
+  <section class="alt">
+    <div class="wrap">
+      <span class="eyebrow">Para quem é</span>
+      <h2>Empresas que vão vender imóveis a partir de 2027</h2>
+      <div class="who">
+        <div><b>Loteadoras e incorporadoras com banco de terrenos</b>Glebas e terrenos comprados há anos, que valorizaram com a chegada de vias, infraestrutura e novos bairros.</div>
+        <div><b>Holdings patrimoniais</b>Imóveis integralizados pelo valor histórico, muito abaixo do mercado atual.</div>
+        <div><b>Empresas com imóveis próprios</b>Galpões, terrenos e salas que podem ser vendidos nos próximos anos.</div>
+        <div><b>Pessoas físicas com muitos imóveis</b>Quem vendeu mais de 3 imóveis no ano anterior, ou tem aluguéis acima de R$ 240 mil por ano com mais de 3 imóveis, também entra no IBS e na CBS (LC 214/2025, art. 251).</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="duvidas">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2>Antes de pedir o orçamento</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>O laudo é obrigatório?</summary>
+          <p>Não. A regra geral é o custo de aquisição corrigido pelo IPCA. O laudo vale a pena quando o imóvel valorizou bem acima disso, para sustentar a estimativa de valor de mercado ou contestar um valor de referência baixo. A triagem mostra em quais imóveis isso acontece.</p>
+        </details>
+        <details>
+          <summary>Preciso fazer o laudo até 31/12/2026?</summary>
+          <p>A data-base do laudo é 31/12/2026, e a vistoria deve ser feita perto dela, em dezembro. O documento pode ser concluído depois, sempre se referindo àquela data.</p>
+        </details>
+        <details>
+          <summary>E os imóveis em obra?</summary>
+          <p>Imóvel em construção em 31/12/2026 tem o redutor calculado pelo terreno mais os custos da obra com nota fiscal (art. 258, II). Nesses casos o trabalho é organizar as notas, não fazer laudo de mercado.</p>
+        </details>
+        <details>
+          <summary>Minha área vai virar loteamento. Muda alguma coisa?</summary>
+          <p>Muda. O parcelamento com pedido de registro feito até 2028 pode optar por pagar 3,65% sobre a receita, sem redutor (art. 486). O laudo ajuda o contador a comparar os dois caminhos antes da decisão, e depois serve para ratear o redutor entre os lotes.</p>
+        </details>
+        <details>
+          <summary>Minha empresa é do Lucro Presumido. Tem direito?</summary>
+          <p>O regime do imposto de renda não muda o direito ao redutor. Ele vale para quem está no regime regular do IBS e da CBS. Confirme o enquadramento com o seu contador.</p>
+        </details>
+        <details>
+          <summary>Quanto custa?</summary>
+          <p>A triagem da carteira tem valor fixo, abatido se a empresa contratar laudos. Cada laudo é orçado pelo tipo de imóvel e pelo método: lote urbano, gleba com comparáveis ou gleba pelo método involutivo. O orçamento fechado sai depois da triagem, imóvel por imóvel.</p>
+        </details>
+        <details>
+          <summary>Onde vocês atendem?</summary>
+          <p>Fortaleza, Região Metropolitana e interior do Ceará. Outros estados, sob consulta.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final">
+    <div class="wrap center">
+      <h2>Dezembro é o mês das vistorias</h2>
+      <p class="lead">Mande a lista de imóveis da sua empresa e receba a triagem com os que compensam laudo.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn-wa" data-lead="final_whatsapp" href="https://wa.me/5585991274802?text=Ol%C3%A1%2C%20quero%20a%20triagem%20dos%20im%C3%B3veis%20da%20minha%20empresa%20para%20o%20redutor%20de%20ajuste." target="_blank" rel="noopener"><svg class="i"><use href="#i-wa"/></svg> Pedir a triagem</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p><b style="color:#fff">AEC Studio</b> — Engenharia e Avaliações Imobiliárias. Laudos assinados por Herbet Hermorgenes Batista dos Santos, engenheiro civil, CREA-CE 381.079.</p>
+      <p style="margin-top:8px">WhatsApp: <a data-lead="rodape_whatsapp" href="https://wa.me/5585991274802" target="_blank" rel="noopener">(85) 99127-4802</a> · E-mail: empresa.aecstudio@gmail.com · <a href="/">Site principal</a></p>
+      <p style="margin-top:8px">Conteúdo informativo. Não substitui parecer tributário ou jurídico.</p>
+    </div>
+  </footer>
+
+  <div class="sticky">
+    <a class="btn btn-wa" data-lead="barra_fixa" href="https://wa.me/5585991274802?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20do%20redutor%20de%20ajuste%20e%20quero%20avaliar%20os%20im%C3%B3veis%20da%20minha%20empresa." target="_blank" rel="noopener">
+      <svg class="i"><use href="#i-wa"/></svg> Avaliar meus imóveis
+    </a>
+  </div>
+
+  <script>
+    (function () {
+      document.querySelectorAll('a[href*="wa.me"]').forEach(function (a) {
+        a.addEventListener('click', function () { window.aecTrackLead(a.getAttribute('data-lead') || 'whatsapp'); });
+      });
+
+      // Fator do IPCA de junho de cada ano até out/2026 (série 433 do Banco Central)
+      var IPCA_ATE = 'out/2026';
+      var F = {1995:6.7576,1996:5.8127,1997:5.4314,1998:5.2523,1999:5.0837,2000:4.7731,2001:4.4464,2002:4.13,2003:3.543,2004:3.3405,2005:3.1142,2006:2.9936,2007:2.887,2008:2.7221,2009:2.5974,2010:2.4774,2011:2.3216,2012:2.2128,2013:2.0739,2014:1.9469,2015:1.7879,2016:1.6426,2017:1.5948,2018:1.5277,2019:1.478,2020:1.4471,2021:1.3356,2022:1.1937,2023:1.1572,2024:1.1102,2025:1.0538,2026:1.0071};
+
+      function num(s) {
+        s = String(s).replace(/[^\d,.-]/g, '');
+        if (s.indexOf(',') > -1) s = s.replace(/\./g, '').replace(',', '.');
+        else s = s.replace(/\./g, '');
+        var n = parseFloat(s);
+        return isFinite(n) ? n : NaN;
+      }
+      function brl(n) { return n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }); }
+
+      var el = function (id) { return document.getElementById(id); };
+      var last = null;
+
+      function calc() {
+        var ano = parseInt(el('ano').value, 10);
+        var pago = num(el('pago').value);
+        var merc = num(el('mercado').value);
+        var v = el('verdict');
+        if (!F[ano] || !(pago > 0) || !(merc > 0)) {
+          ['rFator','rCusto','rMerc','rDif'].forEach(function (k) { el(k).textContent = '–'; });
+          v.hidden = true; last = null; return;
+        }
+        var custo = pago * F[ano];
+        var dif = merc - custo;
+        var pct = dif / custo;
+        el('rFator').textContent = F[ano].toLocaleString('pt-BR', { minimumFractionDigits: 4 }) + ' (até ' + IPCA_ATE + ')';
+        el('rCusto').textContent = brl(custo);
+        el('rMerc').textContent = brl(merc);
+        el('rDif').textContent = brl(dif) + ' (' + Math.round(pct * 100) + '%)';
+        v.hidden = false;
+        if (pct >= 0.3) { v.className = 'verdict yes'; v.textContent = 'O mercado está bem acima do custo corrigido: o laudo tende a compensar.'; }
+        else if (pct >= 0.1) { v.className = 'verdict maybe'; v.textContent = 'Diferença moderada: vale analisar caso a caso na triagem.'; }
+        else { v.className = 'verdict no'; v.textContent = 'O custo corrigido já está perto do mercado: o laudo provavelmente não compensa.'; }
+        last = { ano: ano, pago: pago, merc: merc, custo: custo, dif: dif, pct: pct };
+      }
+
+      ['ano','pago','mercado'].forEach(function (id) { el(id).addEventListener('input', calc); });
+      calc();
+
+      el('calc').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var msg = 'Olá, fiz a simulação do redutor de ajuste e quero um orçamento.';
+        if (last) {
+          msg += '\n\n- *Ano de compra:* ' + last.ano +
+            '\n- *Valor pago:* ' + brl(last.pago) +
+            '\n- *Valor de mercado estimado:* ' + brl(last.merc) +
+            '\n- *Custo corrigido (IPCA):* ' + brl(last.custo) +
+            '\n- *Diferença:* ' + brl(last.dif) + ' (' + Math.round(last.pct * 100) + '%)';
+        }
+        window.aecTrackLead('simulador_redutor');
+        window.open('https://wa.me/5585991274802?text=' + encodeURIComponent(msg), '_blank');
+      });
+    })();
+  </script>
+</body>
+</html>
